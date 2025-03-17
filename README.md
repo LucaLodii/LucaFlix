@@ -1,6 +1,7 @@
 ## LOGO ![LucaFlix Banner](path-to-image.png) 
 
-## Add images showing how the app looks. If possible, include a short GIF (using ScreenToGif or similar) to show navigation.![LucaFlix Homepage](path-to-screenshot.png)
+## Add 
+Images showing how the app looks. If possible, include a short GIF (using ScreenToGif or similar) to show navigation.![LucaFlix Homepage](path-to-screenshot.png)
 
 ## How to Run
 1. Clone the repository  
