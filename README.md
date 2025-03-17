@@ -1,4 +1,5 @@
-## LOGO ![LucaFlix Banner](path-to-image.png) 
+## LOGO 
+![LucaFlix Banner](path-to-image.png) 
 
 ## Add 
 Images showing how the app looks. If possible, include a short GIF (using ScreenToGif or similar) to show navigation.![LucaFlix Homepage](path-to-screenshot.png)
