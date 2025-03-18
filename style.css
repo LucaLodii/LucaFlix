@@ -103,6 +103,8 @@
     margin-left: 50px;
   }
   */
+  
+
   .featured-content {
     height: 50vh;
     padding: 50px;
@@ -161,9 +163,15 @@
     padding: 0 20px;
   }
   
+  .movie-list-title{
+    font-size: 22px;
+    margin-bottom: -65px;
+  }
+
   .movie-list-wrapper {
     position: relative;
     overflow: hidden;
+    margin-bottom: -50px;
   }
   
   .movie-list {
@@ -173,6 +181,7 @@
     transform: translateX(0);
     transition: all 1s ease-in-out;
   }
+
   
   .movie-list-item {
     margin-right: 10px;
@@ -200,19 +209,19 @@
   }
   
   .movie-list-item-title {
-    background-color: #333;
+    background-color: #249c48;
     padding: 0 10px;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: bold;
     position: absolute;
-    top: 10%;
+    top: 1%;
     left: 50px;
     opacity: 0;
     transition: 1s all ease-in-out;
   }
   
   .movie-list-item-desc {
-    background-color: #333;
+    background-color: #249c48;
     padding: 10px;
     font-size: 14px;
     position: absolute;
