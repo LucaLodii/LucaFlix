@@ -92,34 +92,17 @@
     transition: 1s ease all;
   }
   
-  .sidebar {
-    width: 50px;
-    height: 100%;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
-  }
-  
-  .left-menu-icon {
-    color: white;
-    font-size: 20px;
-    margin-bottom: 40px;
-  }
   
   .container {
     background-color: rgb(8, 22, 8);
     min-height: calc(100vh - 50px);
     color: white;
   }
-  
+  /*
   .content-container {
     margin-left: 50px;
   }
-  
+  */
   .featured-content {
     height: 50vh;
     padding: 50px;
