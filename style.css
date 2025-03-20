@@ -1,26 +1,33 @@
 * {
     margin: 0;
+    padding: 0;
+
   }
   
   body {
+    width: 100%;
+    height: 100%;
     font-family: "Roboto", sans-serif;
   }
   
   .navbar {
     width: 100%;
     height: 50px;
-    background-color: black;
-    position: sticky;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    position: fixed;
     top: 0;
-  }
+    transition: background 0.4s ease;
+    z-index: 1000;
+}
   
   .navbar-container {
     display: flex;
     align-items: center;
-    padding: 0 50px;
+    padding: 0 40px;
     height: 100%;
     color: white;
     font-family: "Sen", sans-serif;
+    justify-content: space-between;
   }
   
   .logo-container {
@@ -33,12 +40,16 @@
   }
   
   .menu-container {
+    padding: 40px;
     flex: 6;
+    display: flex;
+    
   }
   
   .menu-list {
     display: flex;
     list-style: none;
+    padding: 0;
   }
   
   .menu-list-item {
@@ -54,7 +65,27 @@
     align-items: center;
     justify-content: flex-end;
   }
-  
+
+    .profile-container .fa-magnifying-glass {
+      padding: 0 18px;
+  }
+
+  .search-bar {
+    display: none;
+    width: 150px;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+    outline: none;
+    background: black;
+    color: white;
+  }
+
+  .search-bar.active {
+    display: block;
+    margin-right: 20px;
+  }
+
   .profile-text-container {
     margin: 0 20px;
   }
@@ -65,7 +96,7 @@
     border-radius: 50%;
     object-fit: cover;
   }
-  
+  /*
   .toggle {
     width: 40px;
     height: 20px;
@@ -91,7 +122,7 @@
     cursor: pointer;
     transition: 1s ease all;
   }
-  
+  */
   
   .container {
     background-color: rgb(8, 22, 8);
@@ -107,7 +138,7 @@
 
   .featured-content {
     height: 50vh;
-    padding: 50px;
+    padding: 40px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0),rgb(8, 22, 8)), url('img/fundo4.jpg') no-repeat center center;
     background-size: cover;
   }
@@ -287,7 +318,86 @@
       background-color: white;
       transform: translateX(-20px);
   }
-  
+  .footer-logos{
+    font-size: 22px;
+    display: flex;
+    gap: 16px;
+    padding: 0 20px;
+    color: rgb(137, 162, 138);
+  }
+  .footer-copwright{
+    font-size: 12px;
+    display: flex;
+    gap: 16px;
+    padding: 5px 20px;
+    color: rgb(137, 162, 138);
+  }
+
+  /* Menu Mobile - Inicio */
+  #MenuToggle{
+    display: none;
+  }
+  .menu-icon2{
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+  }
+  /* Menu Mobile - INICIO */
+  @media screen and (max-width: 768px) {
+    .menu-container {
+        display: none;
+    }
+
+    #menuToggle:checked ~ .menu-container {
+        display: block;
+        width: 80%;
+        height: 330%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px; /* Ajuste a posição conforme necessário */
+        left: 0;
+    }
+
+    .menu-list {
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .menu-list-item {
+        margin: 10px 0;
+        text-align: center;
+        color: white;
+    }
+
+    .menu-icon2 {
+        display: block;
+        padding: 0 15px;
+    }
+
+    .menu-icon2 i:first-child {
+        display: block; /* Ícone do menu (hamburguer) */
+    }
+
+    .menu-icon2 i:last-child {
+        display: none; /* Ícone de fechar (invisível inicialmente) */
+    }
+
+    #menuToggle:checked ~ .menu-container .menu-list {
+        display: block;
+    }
+
+    #menuToggle:checked ~ .menu-container .menu-icon2 i:first-child {
+        display: none; /* Oculta o ícone de hambúrguer quando o menu estiver aberto */
+    }
+
+    #menuToggle:checked ~ .menu-container .menu-icon2 i:last-child {
+        display: block; /* Mostra o ícone de fechar quando o menu estiver aberto */
+    }
+}  /* Menu Mobile - FIM */
+
+  /*
   @media only screen and (max-width: 940px){
       .menu-container{
           display: none;

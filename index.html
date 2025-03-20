@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LucaFlix</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
@@ -14,9 +14,16 @@
 <body>
     <header class="navbar">
         <div class="navbar-container">
+            <!-- Menu para dispositivos móveis -->
+            <input type="checkbox" id="menuToggle">
+            <label for="menuToggle" class="menu-icon2">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
             <div class="logo-container">
                 <h1 class="logo">LucaFlix</h1>
             </div>
+    
             <div class="menu-container">
                 <ul class="menu-list">
                     <li class="menu-list-item active">Home</li>
@@ -25,20 +32,34 @@
                     <li class="menu-list-item">Gênero</li>
                 </ul>
             </div>
+    
             <div class="profile-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-bar" placeholder="Search..." />
                 <img class="profile-picture" src="img/profilePicture.jpg" alt="">
                 <div class="profile-text-container">
                     <span class="profile-text">Perfil</span>
                     <i class="fas fa-caret-down"></i>
                 </div>
-                <div class="toggle">
-                    <i class="fas fa-moon toggle-icon"></i>
-                    <i class="fas fa-sun toggle-icon"></i>
-                    <div class="toggle-ball"></div>
-                </div>
             </div>
         </div>
+    
+        <script>
+            window.addEventListener("scroll", function () {
+                let navbar = document.querySelector(".navbar");
+                if (window.scrollY > 50) {
+                    navbar.style.background = "rgba(0, 0, 0, 0.7)"; /* Cinza escuro ao rolar */
+                } else {
+                    navbar.style.background = "linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))"; /* Gradiente inicial */
+                }
+            });
+    
+            document.querySelector(".search-icon").addEventListener("click", function () {
+                document.querySelector(".search-bar").classList.toggle("active");
+            });
+        </script>
     </header>
+    
     <div class="container">
         <div class="content-container">
             <div class="featured-content">
@@ -93,7 +114,7 @@
                             <button class="movie-list-item-button">Assista</button>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/" alt="">
+                            <img class="movie-list-item-img" src="img/Banner_Rohirrim.webp" alt="">
                             <span class="movie-list-item-title">Senhor dos Anéis: A Guerra dos Rohirrim</span>
                             <p class="movie-list-item-desc">A história do rei Helm Mão-de-Martelo e a origem do Abismo de Helm.</p>
                             <button class="movie-list-item-button">Assista</button>
@@ -280,5 +301,18 @@
         </div>
     </div>
 </body>
+
+<footer>
+    <div class="footer-logos">
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <div class="footer-copwright">
+            <i class="fa-regular fa-copyright"></i>
+            <p>2025-2999 LucaFlix Ltda.</p>
+        </div>
+    </div>
+</footer>
 
 </html>
