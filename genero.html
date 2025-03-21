@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LucaFlix</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="genero.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -26,9 +26,9 @@
     
             <div class="menu-container">
                 <ul class="menu-list">
-                    <li class="menu-list-item active">Home</li>
+                    <li class="menu-list-item active"><button onclick="window.location.href='index.html';">Home</button></li>
                     <li class="menu-list-item">Filmes</li>
-                    <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Ano</button></li>
+                    <li class="menu-list-item">Ano</li>
                     <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Gênero</button></li>
                 </ul>
             </div>
@@ -62,6 +62,7 @@
     
     <div class="container">
         <div class="content-container">
+            <!--tirando o featured content
             <div class="featured-content">
                 <img class="featured-title" src="img/LOTR_logo.webp" alt="">
                 <p class="featured-desc">Frodo, um jovem hobbit, herda um anel mágico com o poder de dominar a Terra Média. Para destruí-lo e impedir que caia nas mãos de Sauron, ele forma a Sociedade do Anel. Juntos, enfrentam perigos enquanto tentam salvar o mundo.</p>
@@ -72,9 +73,9 @@
                     <li>2002</li>
                 </ul>
                 <button class="featured-button">ASSISTA</button>
-            </div>
+            </div> -->
             <div class="movie-list-container">
-                <h1 class="movie-list-title">Obras inspiradas em J.R.R. Tolkien</h1>
+                <h1 class="movie-list-title">Fantasia</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
                         <div class="movie-list-item">
@@ -125,14 +126,6 @@
                             <p class="movie-list-item-desc">Milhares de anos antes de O Senhor dos Anéis, os grandes reinos e os Anéis do Poder são forjados.</p>
                             <button class="movie-list-item-button">Assista</button>
                         </div>
-                    </div>
-                    <i class="fas fa-chevron-right arrow"></i>
-                </div>
-            </div>
-            <div class="movie-list-container">
-                <h1 class="movie-list-title">Filmes de J.K. Rowling</h1>
-                <div class="movie-list-wrapper">
-                    <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_HP1.jpg" alt="">
                             <span class="movie-list-item-title">Harry Potter e a Pedra Filosofal</span>
@@ -186,7 +179,7 @@
                 </div>
             </div>
             <div class="movie-list-container">
-                <h1 class="movie-list-title">Filmes do Estúdio Ghibli</h1>
+                <h1 class="movie-list-title">Animação</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
                         <div class="movie-list-item">
@@ -295,6 +288,112 @@
                         </div>
                     </div>
                     <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Drama</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_Chihiro.webp" alt="">
+                            <span class="movie-list-item-title">A Viagem de Chihiro</span>
+                            <p class="movie-list-item-desc">Chihiro e seus pais entram em um mundo mágico, onde ela deve trabalhar para resgatar seus pais transformados em porcos.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_CasteloAnimado.webp" alt="">
+                            <span class="movie-list-item-title">O Castelo Animado</span>
+                            <p class="movie-list-item-desc">Sophie, transformada em idosa por uma bruxa, embarca em uma jornada com o misterioso mago Howl e seu castelo ambulante.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_MeuAmigoTotoro.webp" alt="">
+                            <span class="movie-list-item-title">Meu Amigo Totoro</span>
+                            <p class="movie-list-item-desc">As irmãs Satsuki e Mei descobrem criaturas mágicas na floresta e fazem amizade com o gentil espírito da natureza, Totoro.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_ServiçosDeEntregasDaKiki.webp" alt="">
+                            <span class="movie-list-item-title">O Serviço de Entregas da Kiki</span>
+                            <p class="movie-list-item-desc">Kiki, uma jovem bruxa em treinamento, abre um serviço de entregas aéreo enquanto busca encontrar seu lugar no mundo.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_OMeninoEAGarça.webp" alt="">
+                            <span class="movie-list-item-title">O Menino e a Garça</span>
+                            <p class="movie-list-item-desc">Um jovem lida com o luto e descobre um mundo mágico após encontrar uma garça enigmática que o guia por uma jornada fantástica.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_PrincesaMononoke.webp" alt="">
+                            <span class="movie-list-item-title">Princesa Mononoke</span>
+                            <p class="movie-list-item-desc">Ashitaka se envolve na luta entre humanos e espíritos da floresta, encontrando a guerreira San e tentando restaurar a paz.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_Ponyo.webp" alt="">
+                            <span class="movie-list-item-title">Ponyo: Uma Amizade que Veio do Mar</span>
+                            <p class="movie-list-item-desc">Ponyo, um peixinho mágico, deseja se tornar humana após se apaixonar por um menino chamado Sosuke.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_Porcorosso.webp" alt="">
+                            <span class="movie-list-item-title">Porco Rosso: O Último Herói Romântico</span>
+                            <p class="movie-list-item-desc">Um piloto amaldiçoado com a aparência de um porco combate piratas aéreos enquanto lida com seu passado misterioso.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Romance</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_OP.webp" alt="">
+                            <span class="movie-list-item-title">One Piece</span>
+                            <p class="movie-list-item-desc">Luffy e sua tripulação exploram os mares em busca do lendário tesouro One Piece.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_CasteloAnimado.webp" alt="">
+                            <span class="movie-list-item-title">O Castelo Animado</span>
+                            <p class="movie-list-item-desc">Sophie, transformada em idosa por uma bruxa, embarca em uma jornada com o misterioso mago Howl e seu castelo ambulante.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Aventura</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_Chihiro.webp" alt="">
+                            <span class="movie-list-item-title">A Viagem de Chihiro</span>
+                            <p class="movie-list-item-desc">Chihiro e seus pais entram em um mundo mágico, onde ela deve trabalhar para resgatar seus pais transformados em porcos.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_MeuAmigoTotoro.webp" alt="">
+                            <span class="movie-list-item-title">Meu Amigo Totoro</span>
+                            <p class="movie-list-item-desc">As irmãs Satsuki e Mei descobrem criaturas mágicas na floresta e fazem amizade com o gentil espírito da natureza, Totoro.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_ServiçosDeEntregasDaKiki.webp" alt="">
+                            <span class="movie-list-item-title">O Serviço de Entregas da Kiki</span>
+                            <p class="movie-list-item-desc">Kiki, uma jovem bruxa em treinamento, abre um serviço de entregas aéreo enquanto busca encontrar seu lugar no mundo.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Banner_Porcorosso.webp" alt="">
+                            <span class="movie-list-item-title">Porco Rosso: O Último Herói Romântico</span>
+                            <p class="movie-list-item-desc">Um piloto amaldiçoado com a aparência de um porco combate piratas aéreos enquanto lida com seu passado misterioso.</p>
+                            <button class="movie-list-item-button">Assista</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
