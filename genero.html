@@ -45,18 +45,77 @@
         </div>
     
         <script>
+            // Existing scroll behavior for navbar
             window.addEventListener("scroll", function () {
                 let navbar = document.querySelector(".navbar");
                 if (window.scrollY > 50) {
-                    navbar.style.background = "rgba(0, 0, 0, 0.7)"; /* Cinza escuro ao rolar */
+                    navbar.style.background = "rgba(0, 0, 0, 0.7)";
                 } else {
-                    navbar.style.background = "linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))"; /* Gradiente inicial */
+                    navbar.style.background = "linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))";
                 }
             });
-    
+        
+            // Existing search toggle
             document.querySelector(".search-icon").addEventListener("click", function () {
                 document.querySelector(".search-bar").classList.toggle("active");
             });
+        
+            // NEW: Carousel functionality for all movie lists
+            document.addEventListener('DOMContentLoaded', function() {
+    const carousels = document.querySelectorAll('.movie-list-wrapper');
+    
+    carousels.forEach(carousel => {
+        const movieList = carousel.querySelector('.movie-list');
+        const arrowLeft = carousel.querySelector('.fa-chevron-left');
+        const arrowRight = carousel.querySelector('.fa-chevron-right');
+        
+        // Calculate scroll amount based on movie item width
+        const movieItem = movieList.querySelector('.movie-list-item');
+        const scrollAmount = movieItem ? movieItem.offsetWidth * 2 : 500;
+        let isScrolling = false;
+        
+        // Right arrow click
+        if (arrowRight) {
+            arrowRight.addEventListener('click', () => {
+                if (isScrolling) return;
+                isScrolling = true;
+                movieList.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                setTimeout(() => isScrolling = false, 500);
+            });
+        }
+        
+        // Left arrow click
+        if (arrowLeft) {
+            arrowLeft.addEventListener('click', () => {
+                if (isScrolling) return;
+                isScrolling = true;
+                movieList.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+                setTimeout(() => isScrolling = false, 500);
+            });
+        }
+        
+        // Hide arrows when at extremes
+        const checkArrows = () => {
+            if (arrowLeft) {
+                arrowLeft.style.display = movieList.scrollLeft <= 10 ? 'none' : 'flex';
+            }
+            if (arrowRight) {
+                const atEnd = movieList.scrollLeft >= movieList.scrollWidth - movieList.clientWidth - 10;
+                arrowRight.style.display = atEnd ? 'none' : 'flex';
+            }
+        };
+        
+        // Initial check and scroll listener
+        checkArrows();
+        movieList.addEventListener('scroll', checkArrows);
+    });
+});
         </script>
     </header>
     
@@ -77,6 +136,7 @@
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Fantasia</h1>
                 <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_lordOfTheRingsTheFellowshipOfTheRing.jpg" alt="">
@@ -181,6 +241,7 @@
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Animação</h1>
                 <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_Chihiro.webp" alt="">
@@ -237,6 +298,7 @@
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Filmes de Ação e Aventura</h1>
                 <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_OP.webp" alt="">
@@ -293,6 +355,7 @@
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Drama</h1>
                 <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_Chihiro.webp" alt="">
@@ -349,6 +412,7 @@
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Romance</h1>
                 <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_OP.webp" alt="">
@@ -368,6 +432,7 @@
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Aventura</h1>
                 <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_Chihiro.webp" alt="">
