@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LucaFlix</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
             <div class="menu-container">
                 <ul class="menu-list">
                     <li class="menu-list-item active">Home</li>
-                    <li class="menu-list-item">Filmes</li>
+                    <li class="menu-list-item"><button onclick="window.location.href='index2.html';">Filmes</button></li>
                     <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Ano</button></li>
                     <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Gênero</button></li>
                 </ul>
@@ -45,18 +45,79 @@
         </div>
     
         <script>
+            // Existing scroll behavior for navbar
             window.addEventListener("scroll", function () {
                 let navbar = document.querySelector(".navbar");
                 if (window.scrollY > 50) {
-                    navbar.style.background = "rgba(0, 0, 0, 0.7)"; /* Cinza escuro ao rolar */
+                    navbar.style.background = "rgba(0, 0, 0, 0.7)";
                 } else {
-                    navbar.style.background = "linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))"; /* Gradiente inicial */
+                    navbar.style.background = "linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))";
                 }
             });
-    
+        
+            // Existing search toggle
             document.querySelector(".search-icon").addEventListener("click", function () {
                 document.querySelector(".search-bar").classList.toggle("active");
             });
+        
+            // NEW: Carousel functionality for all movie lists
+            document.addEventListener('DOMContentLoaded', function() {
+    const carousels = document.querySelectorAll('.movie-list-wrapper');
+    
+    carousels.forEach(carousel => {
+        const movieList = carousel.querySelector('.movie-list');
+        const arrowLeft = carousel.querySelector('.fa-chevron-left');
+        const arrowRight = carousel.querySelector('.fa-chevron-right');
+        
+        // Calculate scroll amount based on movie item width
+        const movieItem = movieList.querySelector('.movie-list-item');
+        const scrollAmount = movieItem ? movieItem.offsetWidth * 2 : 500;
+        let isScrolling = false;
+        
+        // Right arrow click
+        if (arrowRight) {
+            arrowRight.addEventListener('click', () => {
+                if (isScrolling) return;
+                isScrolling = true;
+                movieList.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                setTimeout(() => isScrolling = false, 500);
+            });
+        }
+        
+        // Left arrow click
+        if (arrowLeft) {
+            arrowLeft.addEventListener('click', () => {
+                if (isScrolling) return;
+                isScrolling = true;
+                movieList.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+                setTimeout(() => isScrolling = false, 500);
+            });
+        }
+        
+        // Hide arrows when at extremes
+        const checkArrows = () => {
+            if (arrowLeft) {
+                arrowLeft.style.display = movieList.scrollLeft <= 10 ? 'none' : 'flex';
+            }
+            if (arrowRight) {
+                const atEnd = movieList.scrollLeft >= movieList.scrollWidth - movieList.clientWidth - 10;
+                arrowRight.style.display = atEnd ? 'none' : 'flex';
+            }
+        };
+        
+        // Initial check and scroll listener
+        checkArrows();
+        movieList.addEventListener('scroll', checkArrows);
+
+        //tentando aplicar um trem no botao ASSISTA
+    });
+});
         </script>
     </header>
     
@@ -71,11 +132,12 @@
                     <li>2 h 51 min</li>
                     <li>2002</li>
                 </ul>
-                <button class="featured-button">ASSISTA</button>
+                <button class="featured-button" onclick="window.location.href='https://www.youtube.com/watch?v=V75dMMIW2B4';">ASSISTA</button>
             </div>
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Obras inspiradas em J.R.R. Tolkien</h1>
                 <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_lordOfTheRingsTheFellowshipOfTheRing.jpg" alt="">
@@ -132,6 +194,7 @@
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Filmes de J.K. Rowling</h1>
                 <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_HP1.jpg" alt="">
@@ -188,6 +251,7 @@
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Filmes do Estúdio Ghibli</h1>
                 <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_Chihiro.webp" alt="">
@@ -244,6 +308,7 @@
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Filmes de Ação e Aventura</h1>
                 <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/Banner_OP.webp" alt="">
