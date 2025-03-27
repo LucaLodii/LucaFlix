@@ -1,5 +1,5 @@
 ## LOGO 
-https://raw.githubusercontent.com/LucaLodii/LucaFlix/refs/heads/main/img/LucaFlixLogo.png
+![LucaFlix Logo](https://raw.githubusercontent.com/LucaLodii/LucaFlix/refs/heads/main/img/LucaFlixLogo.png)
 
 ## Add 
 Images showing how the app looks. If possible, include a short GIF (using ScreenToGif or similar) to show navigation.![LucaFlix Homepage](path-to-screenshot.png)
