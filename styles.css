@@ -31,7 +31,15 @@ body {
 }
 
 .logo-container {
+  display: flex;
   flex: 1;
+}
+
+.logo-picture{
+  width: 45px;
+  height: 45px;
+  padding-right: 10px;
+  object-fit: cover;
 }
 
 .logo {
@@ -79,7 +87,7 @@ body {
   justify-content: flex-end;
 }
 
-  .profile-container .fa-magnifying-glass {
+.profile-container .fa-magnifying-glass {
     padding: 0 18px;
 }
 
