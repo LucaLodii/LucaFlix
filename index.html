@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="module" src="app.js"></script>
 
 </head>
 
@@ -28,8 +30,8 @@
             <div class="menu-container">
                 <ul class="menu-list">
                     <li class="menu-list-item active">Home</li>
-                    <li class="menu-list-item"><button onclick="window.location.href='index2.html';">Filmes</button></li>
-                    <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Ano</button></li>
+                    <li class="menu-list-item">Filmes</li>
+                    <li class="menu-list-item">Minha lista</li>
                     <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Gênero</button></li>
                 </ul>
             </div>
@@ -44,82 +46,6 @@
                 </div>
             </div>
         </div>
-    
-        <script>
-            // Existing scroll behavior for navbar
-            window.addEventListener("scroll", function () {
-                let navbar = document.querySelector(".navbar");
-                if (window.scrollY > 50) {
-                    navbar.style.background = "rgba(0, 0, 0, 0.7)";
-                } else {
-                    navbar.style.background = "linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))";
-                }
-            });
-        
-            // Existing search toggle
-            document.querySelector(".search-icon").addEventListener("click", function () {
-                document.querySelector(".search-bar").classList.toggle("active");
-            });
-        
-            // NEW: Carousel functionality for all movie lists
-            document.addEventListener('DOMContentLoaded', function() {
-    const carousels = document.querySelectorAll('.movie-list-wrapper');
-    
-    carousels.forEach(carousel => {
-        const movieList = carousel.querySelector('.movie-list');
-        const arrowLeft = carousel.querySelector('.fa-chevron-left');
-        const arrowRight = carousel.querySelector('.fa-chevron-right');
-        
-        // Calculate scroll amount based on movie item width
-        const movieItem = movieList.querySelector('.movie-list-item');
-        const scrollAmount = movieItem ? movieItem.offsetWidth * 2 : 500;
-        let isScrolling = false;
-        
-        // Right arrow click
-        if (arrowRight) {
-            arrowRight.addEventListener('click', () => {
-                if (isScrolling) return;
-                isScrolling = true;
-                movieList.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-                setTimeout(() => isScrolling = false, 500);
-            });
-        }
-        
-        // Left arrow click
-        if (arrowLeft) {
-            arrowLeft.addEventListener('click', () => {
-                if (isScrolling) return;
-                isScrolling = true;
-                movieList.scrollBy({
-                    left: -scrollAmount,
-                    behavior: 'smooth'
-                });
-                setTimeout(() => isScrolling = false, 500);
-            });
-        }
-        
-        // Hide arrows when at extremes
-        const checkArrows = () => {
-            if (arrowLeft) {
-                arrowLeft.style.display = movieList.scrollLeft <= 10 ? 'none' : 'flex';
-            }
-            if (arrowRight) {
-                const atEnd = movieList.scrollLeft >= movieList.scrollWidth - movieList.clientWidth - 10;
-                arrowRight.style.display = atEnd ? 'none' : 'flex';
-            }
-        };
-        
-        // Initial check and scroll listener
-        checkArrows();
-        movieList.addEventListener('scroll', checkArrows);
-
-        //tentando aplicar um trem no botao ASSISTA
-    });
-});
-        </script>
     </header>
     
     <div class="container">
@@ -133,62 +59,191 @@
                     <li>2 h 51 min</li>
                     <li>2002</li>
                 </ul>
-                <button class="featured-button" onclick="window.location.href='https://www.youtube.com/watch?v=V75dMMIW2B4';">ASSISTA</button>
+                <a 
+                href="https://www.youtube.com/watch?v=V75dMMIW2B4" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="featured-button"
+              >
+                ASSISTA
+              </a>
             </div>
             <div class="movie-list-container">
                 <h1 class="movie-list-title">Obras inspiradas em J.R.R. Tolkien</h1>
                 <div class="movie-list-wrapper">
                     <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_lordOfTheRingsTheFellowshipOfTheRing.jpg" alt="">
-                            <span class="movie-list-item-title">O Senhor dos Anéis: A Sociedade do Anel</span>
-                            <p class="movie-list-item-desc">Frodo Bolseiro recebe um anel poderoso e embarca em uma jornada para destruí-lo antes que Sauron recupere seu poder.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                      <div class="movie-list-item" data-id="lotr1">
+                        <img class="movie-list-item-img" src="img/Banner_lordOfTheRingsTheFellowshipOfTheRing.jpg" alt="">
+                        <div class="movie-hover-panel">
+                          <div class="button-row">
+                            <button class="play-button">
+                              <i class="fas fa-play"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-info-circle"></i>
+                            </button>
+                          </div>
+                          <div class="genre-row">
+                            <span class="genre-tag">Fantasia Épica</span>
+                            <span class="genre-tag">Aventura</span>
+                            <span class="genre-tag">Onírico</span>
+                          </div>
                         </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_LOTR2.jpg" alt="">
-                            <span class="movie-list-item-title">O Senhor dos Anéis: As Duas Torres</span>
-                            <p class="movie-list-item-desc">A Sociedade se separa, enquanto Frodo segue rumo a Mordor e Aragorn luta contra as forças de Saruman.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                      </div>
+
+                      <div class="movie-list-item" data-id="lotr2">
+                        <img class="movie-list-item-img" src="img/Banner_LOTR2.jpg" alt="">
+                        <div class="movie-hover-panel">
+                          <div class="button-row">
+                            <button class="play-button">
+                              <i class="fas fa-play"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-info-circle"></i>
+                            </button>
+                          </div>
+                          <div class="genre-row">
+                            <span class="genre-tag">Fantasia Épica</span>
+                            <span class="genre-tag">Guerra</span>
+                            <span class="genre-tag">Drama</span>
+                          </div>
                         </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_LOTR3.jpg" alt="">
-                            <span class="movie-list-item-title">O Senhor dos Anéis: O Retorno do Rei</span>
-                            <p class="movie-list-item-desc">A batalha final pelo destino da Terra Média se aproxima enquanto Frodo se esforça para destruir o Anel.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                      </div>
+
+                      <div class="movie-list-item" data-id="lotr3">
+                        <img class="movie-list-item-img" src="img/Banner_LOTR3.jpg" alt="">
+                        <div class="movie-hover-panel">
+                          <div class="button-row">
+                            <button class="play-button">
+                              <i class="fas fa-play"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-info-circle"></i>
+                            </button>
+                          </div>
+                          <div class="genre-row">
+                            <span class="genre-tag">Fantasia Épica</span>
+                            <span class="genre-tag">Guerra</span>
+                            <span class="genre-tag">Épico</span>
+                          </div>
                         </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_Hobbit.jpg" alt="">
-                            <span class="movie-list-item-title">O Hobbit: Uma Jornada Inesperada</span>
-                            <p class="movie-list-item-desc">Bilbo Bolseiro se junta a um grupo de anões para recuperar o reino de Erebor do dragão Smaug.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                      </div>
+
+                      <div class="movie-list-item" data-id="hobbit1">
+                        <img class="movie-list-item-img" src="img/Banner_Hobbit.jpg" alt="">
+                        <div class="movie-hover-panel">
+                          <div class="button-row">
+                            <button class="play-button">
+                              <i class="fas fa-play"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-info-circle"></i>
+                            </button>
+                          </div>
+                          <div class="genre-row">
+                            <span class="genre-tag">Fantasia</span>
+                            <span class="genre-tag">Aventura</span>
+                            <span class="genre-tag">Humor</span>
+                          </div>
                         </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_Hobbit2.jpg" alt="">
-                            <span class="movie-list-item-title">O Hobbit: A Desolação de Smaug</span>
-                            <p class="movie-list-item-desc">Bilbo e os anões enfrentam novos desafios enquanto se aproximam da Montanha Solitária.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                      </div>
+                      <div class="movie-list-item" data-id="hobbit2">
+                        <img class="movie-list-item-img" src="img/Banner_Hobbit2.jpg" alt="">
+                        <div class="movie-hover-panel">
+                          <div class="button-row">
+                            <button class="play-button">
+                              <i class="fas fa-play"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-info-circle"></i>
+                            </button>
+                          </div>
+                          <div class="genre-row">
+                            <span class="genre-tag">Fantasia</span>
+                            <span class="genre-tag">Ação</span>
+                            <span class="genre-tag">Suspense</span>
+                          </div>
                         </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_Hobbit3.jpg" alt="">
-                            <span class="movie-list-item-title">O Hobbit: A Batalha dos Cinco Exércitos</span>
-                            <p class="movie-list-item-desc">A luta pelo tesouro de Erebor desencadeia uma guerra épica entre cinco exércitos.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                      </div>
+                      <div class="movie-list-item" data-id="hobbit3">
+                        <img class="movie-list-item-img" src="img/Banner_Hobbit3.jpg" alt="">
+                        <div class="movie-hover-panel">
+                          <div class="button-row">
+                            <button class="play-button">
+                              <i class="fas fa-play"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-info-circle"></i>
+                            </button>
+                          </div>
+                          <div class="genre-row">
+                            <span class="genre-tag">Fantasia</span>
+                            <span class="genre-tag">Ação</span>
+                            <span class="genre-tag">Suspense</span>
+                          </div>
                         </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_Rohirrim.webp" alt="">
-                            <span class="movie-list-item-title">Senhor dos Anéis: A Guerra dos Rohirrim</span>
-                            <p class="movie-list-item-desc">A história do rei Helm Mão-de-Martelo e a origem do Abismo de Helm.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                      </div>
+                      <div class="movie-list-item" data-id="Rohirrim">
+                        <img class="movie-list-item-img" src="img/Banner_Rohirrim.webp" alt="">
+                        <div class="movie-hover-panel">
+                          <div class="button-row">
+                            <button class="play-button">
+                              <i class="fas fa-play"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-info-circle"></i>
+                            </button>
+                          </div>
+                          <div class="genre-row">
+                            <span class="genre-tag">Fantasia</span>
+                            <span class="genre-tag">Ação</span>
+                            <span class="genre-tag">Suspense</span>
+                          </div>
                         </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_RingsOfPower.jpg" alt="">
-                            <span class="movie-list-item-title">Anéis do Poder</span>
-                            <p class="movie-list-item-desc">Milhares de anos antes de O Senhor dos Anéis, os grandes reinos e os Anéis do Poder são forjados.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                      </div>
+                      <div class="movie-list-item" data-id="RingsOfPower">
+                        <img class="movie-list-item-img" src="img/Banner_RingsOfPower.jpg" alt="">
+                        <div class="movie-hover-panel">
+                          <div class="button-row">
+                            <button class="play-button">
+                              <i class="fas fa-play"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="action-button">
+                              <i class="fas fa-info-circle"></i>
+                            </button>
+                          </div>
+                          <div class="genre-row">
+                            <span class="genre-tag">Fantasia</span>
+                            <span class="genre-tag">Ação</span>
+                            <span class="genre-tag">Suspense</span>
+                          </div>
                         </div>
-                    </div>
+                      </div>
                     <i class="fas fa-chevron-right arrow"></i>
                 </div>
             </div>
@@ -198,54 +253,46 @@
                     <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_HP1.jpg" alt="">
-                            <span class="movie-list-item-title">Harry Potter e a Pedra Filosofal</span>
-                            <p class="movie-list-item-desc">Harry descobre que é um bruxo e começa sua jornada em Hogwarts, onde enfrenta seu primeiro grande desafio.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_HP1.jpg" alt="">
+                          <span class="movie-list-item-title">Harry Potter e a Pedra Filosofal</span>
+                          <p class="movie-list-item-desc">Harry descobre que é um bruxo e começa sua jornada em Hogwarts, onde enfrenta seu primeiro grande desafio.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_HP2.jpg" alt="">
-                            <span class="movie-list-item-title">Harry Potter e a Câmara Secreta</span>
-                            <p class="movie-list-item-desc">Estranhos ataques começam a ocorrer em Hogwarts, levando Harry a desvendar o mistério da Câmara Secreta.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_HP2.jpg" alt="">
+                          <span class="movie-list-item-title">Harry Potter e a Câmara Secreta</span>
+                          <p class="movie-list-item-desc">Estranhos ataques começam a ocorrer em Hogwarts, levando Harry a desvendar o mistério da Câmara Secreta.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_HP3.avif" alt="">
-                            <span class="movie-list-item-title">Harry Potter e o Prisioneiro de Azkaban</span>
-                            <p class="movie-list-item-desc">Sirius Black escapa de Azkaban, e Harry descobre verdades sobre seu passado e seus pais.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_HP3.avif" alt="">
+                          <span class="movie-list-item-title">Harry Potter e o Prisioneiro de Azkaban</span>
+                          <p class="movie-list-item-desc">Sirius Black escapa de Azkaban, e Harry descobre verdades sobre seu passado e seus pais.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_HP4.avif" alt="">
-                            <span class="movie-list-item-title">Harry Potter e o Cálice de Fogo</span>
-                            <p class="movie-list-item-desc">Harry é misteriosamente selecionado para o Torneio Tribruxo e enfrenta desafios mortais.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_HP4.avif" alt="">
+                          <span class="movie-list-item-title">Harry Potter e o Cálice de Fogo</span>
+                          <p class="movie-list-item-desc">Harry é misteriosamente selecionado para o Torneio Tribruxo e enfrenta desafios mortais.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_HP5.avif" alt="">
-                            <span class="movie-list-item-title">Harry Potter e a Ordem da Fênix</span>
-                            <p class="movie-list-item-desc">O Ministério da Magia nega o retorno de Voldemort, enquanto Harry lidera a Armada de Dumbledore.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_HP5.avif" alt="">
+                          <span class="movie-list-item-title">Harry Potter e a Ordem da Fênix</span>
+                          <p class="movie-list-item-desc">O Ministério da Magia nega o retorno de Voldemort, enquanto Harry lidera a Armada de Dumbledore.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_HP6.jpg" alt="">
-                            <span class="movie-list-item-title">Harry Potter e o Enigma do Príncipe</span>
-                            <p class="movie-list-item-desc">Dumbledore revela detalhes do passado de Voldemort e Harry descobre os horcruxes.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_HP6.jpg" alt="">
+                          <span class="movie-list-item-title">Harry Potter e o Enigma do Príncipe</span>
+                          <p class="movie-list-item-desc">Dumbledore revela detalhes do passado de Voldemort e Harry descobre os horcruxes.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_HP7_1.jpg" alt="">
-                            <span class="movie-list-item-title">Harry Potter e as Relíquias da Morte - Parte 1</span>
-                            <p class="movie-list-item-desc">Harry, Rony e Hermione fogem de Hogwarts para destruir os horcruxes de Voldemort.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_HP7_1.jpg" alt="">
+                          <span class="movie-list-item-title">Harry Potter e as Relíquias da Morte - Parte 1</span>
+                          <p class="movie-list-item-desc">Harry, Rony e Hermione fogem de Hogwarts para destruir os horcruxes de Voldemort.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_HP7_2.jpg" alt="">
-                            <span class="movie-list-item-title">Harry Potter e as Relíquias da Morte - Parte 2</span>
-                            <p class="movie-list-item-desc">A batalha final em Hogwarts determina o destino do mundo bruxo e o confronto entre Harry e Voldemort.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_HP7_2.jpg" alt="">
+                          <span class="movie-list-item-title">Harry Potter e as Relíquias da Morte - Parte 2</span>
+                          <p class="movie-list-item-desc">A batalha final em Hogwarts determina o destino do mundo bruxo e o confronto entre Harry e Voldemort.</p>
                         </div>
-                    </div>
+                      </div>
                     <i class="fas fa-chevron-right arrow"></i>
                 </div>
             </div>
@@ -255,54 +302,46 @@
                     <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_Chihiro.webp" alt="">
-                            <span class="movie-list-item-title">A Viagem de Chihiro</span>
-                            <p class="movie-list-item-desc">Chihiro e seus pais entram em um mundo mágico, onde ela deve trabalhar para resgatar seus pais transformados em porcos.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_Chihiro.webp" alt="">
+                          <span class="movie-list-item-title">A Viagem de Chihiro</span>
+                          <p class="movie-list-item-desc">Chihiro e seus pais entram em um mundo mágico, onde ela deve trabalhar para resgatar seus pais transformados em porcos.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_CasteloAnimado.webp" alt="">
-                            <span class="movie-list-item-title">O Castelo Animado</span>
-                            <p class="movie-list-item-desc">Sophie, transformada em idosa por uma bruxa, embarca em uma jornada com o misterioso mago Howl e seu castelo ambulante.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_CasteloAnimado.webp" alt="">
+                          <span class="movie-list-item-title">O Castelo Animado</span>
+                          <p class="movie-list-item-desc">Sophie, transformada em idosa por uma bruxa, embarca em uma jornada com o misterioso mago Howl e seu castelo ambulante.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_MeuAmigoTotoro.webp" alt="">
-                            <span class="movie-list-item-title">Meu Amigo Totoro</span>
-                            <p class="movie-list-item-desc">As irmãs Satsuki e Mei descobrem criaturas mágicas na floresta e fazem amizade com o gentil espírito da natureza, Totoro.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_MeuAmigoTotoro.webp" alt="">
+                          <span class="movie-list-item-title">Meu Amigo Totoro</span>
+                          <p class="movie-list-item-desc">As irmãs Satsuki e Mei descobrem criaturas mágicas na floresta e fazem amizade com o gentil espírito da natureza, Totoro.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_ServiçosDeEntregasDaKiki.webp" alt="">
-                            <span class="movie-list-item-title">O Serviço de Entregas da Kiki</span>
-                            <p class="movie-list-item-desc">Kiki, uma jovem bruxa em treinamento, abre um serviço de entregas aéreo enquanto busca encontrar seu lugar no mundo.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_ServiçosDeEntregasDaKiki.webp" alt="">
+                          <span class="movie-list-item-title">O Serviço de Entregas da Kiki</span>
+                          <p class="movie-list-item-desc">Kiki, uma jovem bruxa em treinamento, abre um serviço de entregas aéreo enquanto busca encontrar seu lugar no mundo.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_OMeninoEAGarça.webp" alt="">
-                            <span class="movie-list-item-title">O Menino e a Garça</span>
-                            <p class="movie-list-item-desc">Um jovem lida com o luto e descobre um mundo mágico após encontrar uma garça enigmática que o guia por uma jornada fantástica.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_OMeninoEAGarça.webp" alt="">
+                          <span class="movie-list-item-title">O Menino e a Garça</span>
+                          <p class="movie-list-item-desc">Um jovem lida com o luto e descobre um mundo mágico após encontrar uma garça enigmática que o guia por uma jornada fantástica.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_PrincesaMononoke.webp" alt="">
-                            <span class="movie-list-item-title">Princesa Mononoke</span>
-                            <p class="movie-list-item-desc">Ashitaka se envolve na luta entre humanos e espíritos da floresta, encontrando a guerreira San e tentando restaurar a paz.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_PrincesaMononoke.webp" alt="">
+                          <span class="movie-list-item-title">Princesa Mononoke</span>
+                          <p class="movie-list-item-desc">Ashitaka se envolve na luta entre humanos e espíritos da floresta, encontrando a guerreira San e tentando restaurar a paz.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_Ponyo.webp" alt="">
-                            <span class="movie-list-item-title">Ponyo: Uma Amizade que Veio do Mar</span>
-                            <p class="movie-list-item-desc">Ponyo, um peixinho mágico, deseja se tornar humana após se apaixonar por um menino chamado Sosuke.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_Ponyo.webp" alt="">
+                          <span class="movie-list-item-title">Ponyo: Uma Amizade que Veio do Mar</span>
+                          <p class="movie-list-item-desc">Ponyo, um peixinho mágico, deseja se tornar humana após se apaixonar por um menino chamado Sosuke.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_Porcorosso.webp" alt="">
-                            <span class="movie-list-item-title">Porco Rosso: O Último Herói Romântico</span>
-                            <p class="movie-list-item-desc">Um piloto amaldiçoado com a aparência de um porco combate piratas aéreos enquanto lida com seu passado misterioso.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_Porcorosso.webp" alt="">
+                          <span class="movie-list-item-title">Porco Rosso: O Último Herói Romântico</span>
+                          <p class="movie-list-item-desc">Um piloto amaldiçoado com a aparência de um porco combate piratas aéreos enquanto lida com seu passado misterioso.</p>
                         </div>
-                    </div>
+                      </div>
                     <i class="fas fa-chevron-right arrow"></i>
                 </div>
             </div>
@@ -312,54 +351,46 @@
                     <i class="fas fa-chevron-left arrow"></i>
                     <div class="movie-list">
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_OP.webp" alt="">
-                            <span class="movie-list-item-title">One Piece</span>
-                            <p class="movie-list-item-desc">Luffy e sua tripulação exploram os mares em busca do lendário tesouro One Piece.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_OP.webp" alt="">
+                          <span class="movie-list-item-title">One Piece</span>
+                          <p class="movie-list-item-desc">Luffy e sua tripulação exploram os mares em busca do lendário tesouro One Piece.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_OPLiveAction.jpg" alt="">
-                            <span class="movie-list-item-title">One Piece Live Action</span>
-                            <p class="movie-list-item-desc">Adaptação em live-action da jornada de Luffy e seus amigos.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_OPLiveAction.jpg" alt="">
+                          <span class="movie-list-item-title">One Piece Live Action</span>
+                          <p class="movie-list-item-desc">Adaptação em live-action da jornada de Luffy e seus amigos.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_OPRed.webp" alt="">
-                            <span class="movie-list-item-title">One Piece Film: Red</span>
-                            <p class="movie-list-item-desc">Uta, filha de Shanks, revela um segredo que impacta o mundo.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_OPRed.webp" alt="">
+                          <span class="movie-list-item-title">One Piece Film: Red</span>
+                          <p class="movie-list-item-desc">Uta, filha de Shanks, revela um segredo que impacta o mundo.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_OPStampede.jpg" alt="">
-                            <span class="movie-list-item-title">One Piece: Stampede</span>
-                            <p class="movie-list-item-desc">Piratas do mundo se reúnem para disputar um tesouro lendário.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_OPStampede.jpg" alt="">
+                          <span class="movie-list-item-title">One Piece: Stampede</span>
+                          <p class="movie-list-item-desc">Piratas do mundo se reúnem para disputar um tesouro lendário.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_OPGold.jpg" alt="">
-                            <span class="movie-list-item-title">One Piece Film: Gold</span>
-                            <p class="movie-list-item-desc">Os Chapéus de Palha entram em um cassino flutuante cheio de perigos.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_OPGold.jpg" alt="">
+                          <span class="movie-list-item-title">One Piece Film: Gold</span>
+                          <p class="movie-list-item-desc">Os Chapéus de Palha entram em um cassino flutuante cheio de perigos.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_OPHeartOfGold.webp" alt="">
-                            <span class="movie-list-item-title">One Piece: Heart of Gold</span>
-                            <p class="movie-list-item-desc">A tripulação busca o tesouro Pure Gold enfrentando novos desafios.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_OPHeartOfGold.webp" alt="">
+                          <span class="movie-list-item-title">One Piece: Heart of Gold</span>
+                          <p class="movie-list-item-desc">A tripulação busca o tesouro Pure Gold enfrentando novos desafios.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_OPZ.webp" alt="">
-                            <span class="movie-list-item-title">One Piece Film: Z</span>
-                            <p class="movie-list-item-desc">Luffy enfrenta um ex-almirante que ameaça o governo mundial.</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_OPZ.webp" alt="">
+                          <span class="movie-list-item-title">One Piece Film: Z</span>
+                          <p class="movie-list-item-desc">Luffy enfrenta um ex-almirante que ameaça o governo mundial.</p>
                         </div>
                         <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="img/Banner_OPStrongWorld.webp" alt="">
-                            <span class="movie-list-item-title">One Piece: Strong World</span>
-                            <p class="movie-list-item-desc">O lendário pirata Shiki reaparece com um plano maléfico. Depois de sequestrar sua companheira, Luffy e sua tripulação</p>
-                            <button class="movie-list-item-button">Assista</button>
+                          <img class="movie-list-item-img" src="img/Banner_OPStrongWorld.webp" alt="">
+                          <span class="movie-list-item-title">One Piece: Strong World</span>
+                          <p class="movie-list-item-desc">O lendário pirata Shiki reaparece com um plano maléfico. Depois de sequestrar sua companheira, Luffy e sua tripulação</p>
                         </div>
-                    </div>
+                      </div>
                     <i class="fas fa-chevron-right arrow"></i>
                 </div>
             </div>
