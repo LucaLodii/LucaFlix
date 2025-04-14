@@ -63,6 +63,13 @@ body {
 .menu-list-item {
   margin-right: 30px;
   font-size: 16px; 
+  transition: all 0.3s ease;
+}
+
+.menu-list-item:hover{
+  transform: scale(1.05); /* Efeito de zoom sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+  backdrop-filter: brightness(0.7); /* Darkens the image underneath */
 }
 
 .menu-list-item button{
@@ -80,6 +87,8 @@ body {
 .menu-list-item.active {
   font-weight: bold;
 }
+
+
 .profile-container {
   flex: 2;
   display: flex;
