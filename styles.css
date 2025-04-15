@@ -100,6 +100,7 @@ body {
     padding: 0 18px;
 }
 
+
 .search-bar {
   display: none;
   width: 150px;
@@ -114,6 +115,16 @@ body {
 .search-bar.active {
   display: block;
   margin-right: 20px;
+}
+
+.search-icon {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.search-icon:hover {
+  transform: scale(1.1); /* Slightly more subtle than 1.05 */
+  text-shadow: 0 0 5px rgba(96, 221, 159, 0.3); /* Soft glow */
 }
 
 .profile-text-container {
@@ -233,12 +244,12 @@ body {
 
 /*ÁREA PARA COPIAR*/
 .movie-list-container {
-  padding: 0 20px;
+  padding: 5px 20px;
 }
 
 .movie-list-title {
   font-size: 22px;
-  margin-bottom: 10px; /* Ajustado para positivo */
+  margin-bottom: 7px; /* Ajustado para positivo */
 }
 
 .movie-list-wrapper {
@@ -408,12 +419,14 @@ transform: translateY(-50%) scale(1.1);
     background-color: white;
     transform: translateX(-20px);
 }
+
 .footer-logos{
   font-size: 22px;
   display: flex;
   gap: 16px;
   padding: 0 20px;
   color: rgb(137, 162, 138);
+  background-color: rgb(8, 22, 8);
 }
 .footer-copwright{
   font-size: 12px;
