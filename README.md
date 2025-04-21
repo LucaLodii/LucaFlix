@@ -1,19 +1,19 @@
 ## LOGO 
 <img src="https://raw.githubusercontent.com/LucaLodii/LucaFlix/main/img/LucaFlixLogo.png" width="200">
 
-## Add 
+## Adicionar
 Images showing how the app looks. If possible, include a short GIF (using ScreenToGif or similar) to show navigation.![LucaFlix Homepage](path-to-screenshot.png)
 
-## How to Run
-1. Clone the repository  
+## Como Executar:
+1. Clone o repositório  
    ```
    git clone https://github.com/yourusername/LucaFlix.git
    ```
-2. Open the project in VS Code  
-3. Install Live Server extension  
-4. Right-click `index.html` and select **"Open with Live Server"** 
+2. Abra o projeto no VS Code  
+3. Instale a extensão Live Server 
+4. Clique com o botão direito em `index.html` e selecione **"Open with Live Server"** 
 
 ## Features  
-✅ Browse movies  
-✅ Watch trailers  
-✅ Create a watchlist  
+✅ Navegar por filmes  
+✅ Assistir trailers  
+✅ Criar uma lista de favoritos  
