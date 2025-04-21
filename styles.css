@@ -42,6 +42,16 @@ body {
   object-fit: cover;
 }
 
+/*A LOGO JA FOI ASSIM
+.logo {
+  font-weight: 700;
+  background: linear-gradient(to right, #60dd9f, #2c6b2f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(96, 221, 159, 0.3);
+}
+*/
+
 .logo {
   font-size: 30px;
   color: rgb(44, 107, 47);
@@ -176,12 +186,43 @@ body {
 }
 */
 
-
 .featured-content {
-  height: 55vh;
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.featured-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(8, 22, 8));
+  z-index: 1;
+  margin-top: 30px; /* Pull content upward */
+}
+
+.featured-content-inner {
+  position: relative;
+  z-index: 2;
   padding: 45px 2%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0),rgb(8, 22, 8)), url('img/fundo4.jpg') no-repeat center center;
-  background-size: cover;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px !important; /* Reduce from original 45px */
+  margin-top: -30px; /* Pull content upward */
 }
 
 .featured-title {
@@ -234,6 +275,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease; /* Efeito suave ao hover */
+  max-width: 10vh;
 }
 
 .featured-button:hover {

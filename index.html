@@ -54,20 +54,33 @@
   <div class="container">
     <div class="content-container">
       <div class="featured-content">
-        <img class="featured-title" src="img/LOTR_logo.webp" alt="">
-        <p class="featured-desc">Frodo, um jovem hobbit, herda um anel mágico com o poder de dominar a Terra Média. Para
-          destruí-lo e impedir que caia nas mãos de Sauron, ele forma a Sociedade do Anel. Juntos, enfrentam perigos
-          enquanto tentam salvar o mundo.</p>
-        <p class="featured-content2">4X Ganhador do OSCAR</p>
-        <ul class="featured-content3">
-          <li>IMDb 8.9</li>
-          <li>2 h 51 min</li>
-          <li>2002</li>
-        </ul>
-        <a href="https://www.youtube.com/watch?v=V75dMMIW2B4" target="_blank" rel="noopener noreferrer"
-          class="featured-button">
-          ASSISTA
-        </a>
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="featured-video" poster="img/fundo4.jpg">
+          <source src="trailer/The Fellowship of the Ring ｜ The Lord of the Rings 4K Ultra HD ｜ Warner Bros. Entertainment [_nZdmwHrcnw].webm" type="video/mp4">
+          <!-- Fallback image if video can't load -->
+          <img src="img/fundo4.jpg" alt="Background Fallback" style="width: 100%; height: 100%; object-fit: cover;">
+        </video>
+        
+        <!-- Gradient Overlay -->
+        <div class="video-overlay"></div>
+      
+        <!-- Your Existing Content -->
+        <div class="featured-content-inner">
+            <img class="featured-title" src="img/LOTR_logo.webp" alt="O Senhor dos Anéis">
+            <p class="featured-desc">Frodo, um jovem hobbit, herda um anel mágico com o poder de dominar a Terra Média. Para
+              destruí-lo e impedir que caia nas mãos de Sauron, ele forma a Sociedade do Anel. Juntos, enfrentam perigos
+              enquanto tentam salvar o mundo.</p>
+            <p class="featured-content2">4X Ganhador do OSCAR</p>
+            <ul class="featured-content3">
+              <li>IMDb 8.9</li>
+              <li>2 h 51 min</li>
+              <li>2002</li>
+            </ul>
+            <a href="https://www.youtube.com/watch?v=V75dMMIW2B4" target="_blank" rel="noopener noreferrer" class="featured-button">
+              ASSISTA
+            </a>
+          </div>
+        </div>
       </div>
       <div class="movie-list-container">
         <h1 class="movie-list-title">Obras inspiradas em J.R.R. Tolkien</h1>

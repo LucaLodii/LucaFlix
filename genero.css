@@ -80,6 +80,7 @@ body {
   font-weight: bold;
 }
 
+
 .profile-container {
   flex: 2;
   display: flex;
@@ -87,9 +88,10 @@ body {
   justify-content: flex-end;
 }
 
-  .profile-container .fa-magnifying-glass {
+.profile-container .fa-magnifying-glass {
     padding: 0 18px;
 }
+
 
 .search-bar {
   display: none;
@@ -105,6 +107,16 @@ body {
 .search-bar.active {
   display: block;
   margin-right: 20px;
+}
+
+.search-icon {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.search-icon:hover {
+  transform: scale(1.1); /* Slightly more subtle than 1.05 */
+  text-shadow: 0 0 5px rgba(96, 221, 159, 0.3); /* Soft glow */
 }
 
 .profile-text-container {
