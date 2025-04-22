@@ -420,6 +420,9 @@ window.addEventListener("scroll", () => {
 });
 
 // Search toggle (otimizado)
-document.querySelector(".search-icon")?.addEventListener("click", () => {
-  document.querySelector(".search-bar")?.classList.toggle("active");
+document.querySelectorAll('.menu-list-item').forEach(item => {
+  item.addEventListener('click', () => {
+      document.getElementById('menuToggle').checked = false;
+  });
 });
+

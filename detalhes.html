@@ -12,39 +12,41 @@
     </style>
 </head>
 
-<body>
+<body class="detalhes-page">
     <header class="navbar">
+        <!-- MOVER o input checkbox PARA AQUI (fora do navbar-container) -->
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle" class="menu-icon2">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </label>
+        
         <div class="navbar-container">
-            <input type="checkbox" id="menuToggle">
-            <label for="menuToggle" class="menu-icon2">
-                <i class="fa-solid fa-bars"></i>
-                <i class="fa-solid fa-xmark"></i>
-            </label>
             <div class="logo-container">
-                <img class="logo-picture" src="img/LucaFlixLogo.png" alt="LucaFlix">
+                <img class="logo-picture" src="img/LucaFlixLogo.png" alt="">
                 <h1 class="logo">LucaFlix</h1>
             </div>
-    
+            
             <div class="menu-container">
                 <ul class="menu-list">
-                    <li class="menu-list-item active"><button onclick="window.location.href='index.html';">Home</button></li>
+                    <li class="menu-list-item"><button onclick="window.location.href='index.html';">Home</button></li>
                     <li class="menu-list-item">Filmes</li>
                     <li class="menu-list-item">Minha lista</li>
                     <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Gênero</button></li>
                 </ul>
             </div>
     
-            <div class="profile-container">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" class="search-bar" placeholder="Search...">
-                <img class="profile-picture" src="img/profilePicture.jpg" alt="">
-                <div class="profile-text-container">
-                    <span class="profile-text">Perfil</span>
-                    <i class="fas fa-caret-down"></i>
-                </div>
+          <div class="profile-container">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="search-bar" placeholder="Search..." />
+            <img class="profile-picture" src="img/profilePicture.jpg" alt="">
+            <div class="profile-text-container">
+              <span class="profile-text">Perfil</span>
+              <i class="fas fa-caret-down"></i>
             </div>
+          </div>
         </div>
-    </header>
+      </header>
 
     <main>
         <div class="container">
@@ -69,21 +71,6 @@
             </div>
         </div>
     </main>
-
-<!-- TA FICANDO BRANCO ESSE FDP
-<footer>
-    <div class="footer-logos">
-        <i class="fa-brands fa-square-facebook"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-x-twitter"></i>
-        <i class="fa-brands fa-youtube"></i>
-        <div class="footer-copwright">
-            <i class="fa-regular fa-copyright"></i>
-            <p>2025-2999 LucaFlix Ltda.</p>
-        </div>
-    </div>
-</footer>
--->
 
     <!-- Scripts -->
     <script src="jquery-3.7.1.min.js"></script>

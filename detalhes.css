@@ -1,157 +1,153 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    width: 100%;
-    height: 100%;
-    font-family: "Roboto", sans-serif;
-  }
+  margin: 0;
+  padding: 0;
 
-  .navbar {
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-    position: fixed;
-    top: 0;
-    transition: background 0.4s ease;
-    z-index: 1000;
-  }
-  
-  .navbar-container {
-    display: flex;
-    align-items: center;
-    padding: 0 40px;
-    height: 100%;
-    color: white;
-    font-family: "Sen", sans-serif;
-    justify-content: space-between;
-  }
-  
-  .logo-container {
-    display: flex;
-    flex: 1;
-  }
-  
-  .logo-picture{
-    width: 42px;
-    height: 42px;
-    padding-right: 6px;
-    object-fit: cover;
-  }
-  
-  .logo {
-    font-size: 30px;
-    color: rgb(44, 107, 47);
-  }
-  
-  .menu-container {
-    padding: 40px;
-    flex: 6;
-    display: flex;
-    
-  }
-  
-  .menu-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .menu-list-item {
-    margin-right: 30px;
-    font-size: 16px; 
-    transition: all 0.3s ease;
-  }
-  
-  .menu-list-item:hover{
-    transform: scale(1.05); /* Efeito de zoom sutil */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
-    backdrop-filter: brightness(0.7); /* Darkens the image underneath */
-  }
-  
-  .menu-list-item button{
-    border: none;
-    background: none;
-    font-family: "Sen", sans-serif;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    font-size: 16px; 
-  }
-  
-  .menu-list-item.active {
-    font-weight: bold;
-  }
+}
 
-  .profile-container {
-    flex: 2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  position: fixed;
+  top: 0;
+  transition: background 0.4s ease;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  height: 100%;
+  color: white;
+  font-family: "Sen", sans-serif;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  flex: 1;
+}
+
+.logo-picture{
+  width: 42px;
+  height: 42px;
+  padding-right: 6px;
+  object-fit: cover;
+}
+
+/*A LOGO JA FOI ASSIM
+.logo {
+  font-weight: 700;
+  background: linear-gradient(to right, #60dd9f, #2c6b2f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(96, 221, 159, 0.3);
+}
+*/
+
+.logo {
+  font-size: 30px;
+  color: rgb(44, 107, 47);
+}
+
+.menu-container {
+  padding: 40px;
+  flex: 6;
+  display: flex;
   
-  .profile-container .fa-magnifying-glass {
-      padding: 0 18px;
-  }
-  
-  .search-bar {
-    display: none;
-    width: 150px;
-    padding: 5px;
-    border: 1px solid white;
-    border-radius: 5px;
-    outline: none;
-    background: black;
-    color: white;
-  }
-  
-  .search-bar.active {
-    display: block;
-    margin-right: 20px;
-  }
-  
-  .profile-text-container {
-    margin: 0 20px;
-  }
-  
-  .profile-picture {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  /*
-  .toggle {
-    width: 40px;
-    height: 20px;
-    background-color: white;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: relative;
-  }
-  
-  .toggle-icon {
-    color: goldenrod;
-  }
-  
-  .toggle-ball {
-    width: 18px;
-    height: 18px;
-    background-color: black;
-    position: absolute;
-    right: 1px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 1s ease all;
-  }
-  */
-  
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.menu-list-item {
+  margin-right: 30px;
+  font-size: 16px; 
+  transition: all 0.3s ease;
+}
+
+.menu-list-item:hover{
+  transform: scale(1.05); /* Efeito de zoom sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+  backdrop-filter: brightness(0.7); /* Darkens the image underneath */
+}
+
+.menu-list-item button{
+  border: none;
+  background: none;
+  font-family: "Sen", sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 16px; 
+}
+
+.menu-list-item.active {
+  font-weight: bold;
+}
+
+
+.profile-container {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profile-container .fa-magnifying-glass {
+    padding: 0 18px;
+}
+
+
+.search-bar {
+  display: none;
+  width: 150px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: none;
+  background: black;
+  color: white;
+}
+
+.search-bar.active {
+  display: block;
+  margin-right: 20px;
+}
+
+.search-icon {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.search-icon:hover {
+  transform: scale(1.1); /* Slightly more subtle than 1.05 */
+  text-shadow: 0 0 5px rgba(96, 221, 159, 0.3); /* Soft glow */
+}
+
+.profile-text-container {
+  margin: 0 20px;
+}
+
+.profile-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
   .container {
     background-color: rgb(8, 22, 8);
     min-height: 100vh; /*ANTES ERA calc(100vh);) */
@@ -448,128 +444,95 @@
       background-color: white;
       transform: translateX(-20px);
   }
-/*
-  footer {
-    background: linear-gradient(to bottom, #141414, #000);
-    padding: 20px 0;
-} 
+/* ===================== */
+/* REGRAS GERAIS DO MENU MOBILE */
+/* ===================== */
 
-  .footer-logos{
-    font-size: 22px;
-    display: flex;
-    gap: 16px;
-    padding: 0 20px;
-    color: rgb(137, 162, 138);
-  }
-  .footer-copwright{
-    font-size: 12px;
-    display: flex;
-    gap: 16px;
-    padding: 5px 20px;
-    color: rgb(137, 162, 138);
-  }
-  */
-  /* Menu Mobile - Inicio */
-/* 1. Hide mobile toggle specifically on detalhes.html */
-body.detalhes-page .menu-icon2,
-body.detalhes-page #menuToggle {
-    display: none !important;
+/* Esconde o checkbox mas mantém funcional */
+#menuToggle {
+  position: absolute;
+  opacity: 0;
 }
 
-/* 2. Force desktop menu to stay visible on detalhes.html */
-body.detalhes-page .menu-container {
-    display: flex !important;
+/* Estilo do botão do menu mobile */
+.menu-icon2 {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  top: 15px;
+  z-index: 1001;
+  font-size: 24px;
+  color: white;
 }
 
-/* 3. Modify your existing mobile query to exclude detalhes.html */
+/* Container do menu - escondido por padrão no mobile */
+.menu-container {
+  display: none;
+}
+
+/* ==================== */
+/* ESTILOS PARA MOBILE (768px ou menos) */
+/* ==================== */
 @media screen and (max-width: 768px) {
-    body:not(.detalhes-page) .menu-container {
-        display: none;
-    }
-    
-    body:not(.detalhes-page) .menu-icon2 {
-        display: block;
-    }
+  /* Mostra o botão do menu */
+  .menu-icon2 {
+      display: block;
+  }
+  
+  /* Mostra o menu quando o checkbox está marcado */
+  #menuToggle:checked ~ .navbar-container .menu-container {
+      display: block;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 50px);
+      background-color: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+  }
+  
+  /* Estilos para os itens do menu no mobile */
+  .menu-list {
+      flex-direction: column;
+      padding: 20px;
+  }
+  
+  .menu-list-item {
+      margin: 10px 0;
+      text-align: center;
+  }
+  
+  /* Alternância entre ícones de hambúrguer e X */
+  .menu-icon2 i:first-child { display: block; }
+  .menu-icon2 i:last-child { display: none; }
+  
+  #menuToggle:checked + .menu-icon2 i:first-child { display: none; }
+  #menuToggle:checked + .menu-icon2 i:last-child { display: block; }
 }
-  
-  #MenuToggle{
-    display: none;
+
+/* ==================== */
+/* ESTILOS PARA DESKTOP (769px ou mais) */
+/* ==================== */
+@media (min-width: 769px) {
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
   }
-  .menu-icon2{
-    display: none;
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
+
+  .menu-container {
+    display: flex !important;
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .menu-list {
+    display: flex;
+    gap: 20px;
   }
   
-  /* Menu Mobile - INICIO */
-  @media screen and (max-width: 768px) {
-  
-    .featured-title {
-      width: 240px;
-    }
-  
-    .featured-desc {
-      font-size: 14px;
-      max-width: 100%;
-      padding: 10px; 
-    }
-  
-    .menu-container {
-        display: none;
-    }
-  
-    #menuToggle:checked ~ .menu-container {
-        display: block;
-        width: 80%;
-        height: 330%;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 60px; /* Ajuste a posição conforme necessário */
-        left: 0;
-    }
-  
-    .menu-list {
-        flex-direction: column;
-        padding: 20px;
-        width: 100%;
-    }
-  
-    .menu-list-item {
-        margin: 10px 0;
-        text-align: center;
-        color: white;
-    }
-  
-    .menu-icon2 {
-        display: block;
-        padding: 0 15px;
-    }
-  
-    .menu-icon2 i:first-child {
-        display: block; /* Ícone do menu (hamburguer) */
-    }
-  
-    .menu-icon2 i:last-child {
-        display: none; /* Ícone de fechar (invisível inicialmente) */
-    }
-  
-    #menuToggle:checked ~ .menu-container .menu-list {
-        display: block;
-    }
-  
-    #menuToggle:checked ~ .menu-container .menu-icon2 i:first-child {
-        display: none; /* Oculta o ícone de hambúrguer quando o menu estiver aberto */
-    }
-  
-    #menuToggle:checked ~ .menu-container .menu-icon2 i:last-child {
-        display: block; /* Mostra o ícone de fechar quando o menu estiver aberto */
-    }
-  }  /* Menu Mobile - FIM */
-  
-  /*
-  @media only screen and (max-width: 940px){
-      .menu-container{
-          display: none;
-      }
+  .menu-icon2 {
+      display: none !important;
   }
+}
