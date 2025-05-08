@@ -45,6 +45,7 @@ body {
 .logo {
   font-size: 30px;
   color: rgb(44, 107, 47);
+  padding-right: 17.2px;
 }
 
 .menu-container {
@@ -61,7 +62,7 @@ body {
 }
 
 .menu-list-item {
-  margin-right: 30px;
+  margin-right: 10px;
   font-size: 16px; 
   transition: all 0.3s ease;
 }
