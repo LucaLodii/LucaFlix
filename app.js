@@ -420,9 +420,25 @@ window.addEventListener("scroll", () => {
 });
 
 // Search toggle (otimizado)
-document.querySelectorAll('.menu-list-item').forEach(item => {
-  item.addEventListener('click', () => {
-      document.getElementById('menuToggle').checked = false;
-  });
+document.querySelector('.search-icon').addEventListener('click', function(e) {
+  e.stopPropagation(); // Prevent the click from bubbling up
+  const searchBar = document.querySelector('.search-bar');
+  searchBar.classList.toggle('active');
+  
+  // Focus on the input when it appears
+  if (searchBar.classList.contains('active')) {
+    searchBar.focus();
+  }
+});
+
+// Close search when clicking anywhere else
+document.addEventListener('click', function() {
+  const searchBar = document.querySelector('.search-bar');
+  searchBar.classList.remove('active');
+});
+
+// Prevent search bar from closing when clicking inside it
+document.querySelector('.search-bar').addEventListener('click', function(e) {
+  e.stopPropagation();
 });
 

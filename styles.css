@@ -42,16 +42,6 @@ body {
   object-fit: cover;
 }
 
-/*A LOGO JA FOI ASSIM
-.logo {
-  font-weight: 700;
-  background: linear-gradient(to right, #60dd9f, #2c6b2f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 10px rgba(96, 221, 159, 0.3);
-}
-*/
-
 .logo {
   font-size: 30px;
   color: rgb(44, 107, 47);
@@ -61,7 +51,6 @@ body {
   padding: 40px;
   flex: 6;
   display: flex;
-  
 }
 
 .menu-list {

@@ -23,7 +23,7 @@ body {
 .navbar-container {
   display: flex;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 40px !important; /* Não o motivo, mas so funciona com o !important */
   height: 100%;
   color: white;
   font-family: "Sen", sans-serif;
@@ -42,26 +42,16 @@ body {
   object-fit: cover;
 }
 
-/*A LOGO JA FOI ASSIM
-.logo {
-  font-weight: 700;
-  background: linear-gradient(to right, #60dd9f, #2c6b2f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 10px rgba(96, 221, 159, 0.3);
-}
-*/
-
 .logo {
   font-size: 30px;
   color: rgb(44, 107, 47);
 }
 
 .menu-container {
-  padding: 40px;
-  flex: 6;
-  display: flex;
-  
+  flex: 6 !important;
+  justify-content: flex-start !important;
+  margin-right: auto !important; 
+  padding-left: 20px !important; /* Espaço depois da logo */
 }
 
 .menu-list {
@@ -100,7 +90,8 @@ body {
 
 
 .profile-container {
-  flex: 2;
+  flex: 2 !important;       /* Less space than menu */
+  min-width: fit-content !important; /* Prevents squeezing */
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -153,15 +144,6 @@ body {
     min-height: 100vh; /*ANTES ERA calc(100vh);) */
     color: white;
   }
-  /*
-  .content-container {
-    margin-left: 50px;
-  }
-  */
-/* COISAS DO JS*/
-/* Horizontal list styling */
-
-/* Descrição como bloco */
 
 .movie-title{
   padding: 12px 0;
