@@ -233,7 +233,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease; /* Efeito suave ao hover */
-  max-width: 10vh;
+  max-width: 8.4vh;
 }
 
 .featured-button:hover {

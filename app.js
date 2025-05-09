@@ -269,15 +269,6 @@ const filmes = [
 ];
 
 // ========== FUNÇÕES PRINCIPAIS ========== //
-//function 
-
-function renderizarCards() {
-  const $container = $('.movie-list');
-  filmes.forEach(filme => {
-    // tinha algo aqui
-  });
-}
-
 function redirectToDetails(movieId) {
   if (!movieId) return;
   window.location.href = `detalhes.html?id=${movieId}`;
@@ -297,79 +288,30 @@ function loadMovieDetails() {
   renderMovieDetails(filme);
 }
 
-// ========== FUNÇÕES AUXILIARES ========== //
-
-function showError(message) {
-  console.error(message);
-  $('#content-details').html(`
-    <div class="error-movie">
-      <i class="fas fa-exclamation-triangle"></i>
-      <p>${message}</p>
-      <button onclick="window.location.href='index.html';">Voltar</button>
-    </div>
-  `);
-}
-
-//se tiver imagem roda a imagem se não titulo SUBSTITUIR ESSA FUNCAO NO H1
-
 function renderMovieDetails(filme) {
-  $('#content-details').html(`
-        <div class="movie-detail">
-        <img src=${filme.logo}>
-          <h1 class="movie-title">${filme.titulo}</h1>
-          <p class="movie-oscars">${filme.oscars}</p>
-          <div class="movie-description">
-            <p><strong>Descrição:</strong> ${filme.descricao}</p>
-          </div>
-          
-          <div class="movie-meta-container">
-            <ul class="horizontal-meta-list">
-              <li><strong>IMDb:</strong> ${filme.avaliacao}</li>
-              <li>${filme.duracao}</li>
-              <li>${filme.ano}</li>
-              ${filme.genero ? `<li>${filme.genero}</li>` : ''}
-            </ul>
-          </div>
-        </div>
-      `);
+  const contentDetails = document.getElementById('content-details');
+  if (!contentDetails) return;
 
-  setupButtonEvents(filme);
+  contentDetails.innerHTML = `
+    <div class="movie-detail">
+      <img src="${filme.logo}" alt="${filme.titulo}">
+      <h1 class="movie-title">${filme.titulo}</h1>
+      <p class="movie-oscars">${filme.oscars}</p>
+      <div class="movie-description">
+        <p><strong>Descrição:</strong> ${filme.descricao}</p>
+      </div>
+      <div class="movie-meta-container">
+        <ul class="horizontal-meta-list">
+          <li><strong>IMDb:</strong> ${filme.avaliacao}</li>
+          <li>${filme.duracao}</li>
+          <li>${filme.ano}</li>
+        </ul>
+      </div>
+    </div>
+  `;
 }
 
-function setupButtonEvents(filme) {
-  $('.btn-watch').click(() => alert(`Iniciando: ${filme.titulo}`));
-  $('.btn-trailer').click(() => {
-    window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(filme.titulo + ' trailer')}`, '_blank');
-  });
-}
-
-// ========== INICIALIZAÇÃO ========== //
-
-// Add this to detect detalhes.html
-if (window.location.pathname.includes('detalhes.html')) {
-  document.body.classList.add('detalhes-page');
-}
-
-$(document).ready(function () {
-  // Cards na página inicial
-  if ($('.movie-list').length) {
-    renderizarCards();
-    $('.movie-list').on('click', '.movie-list-item', function () {
-      redirectToDetails($(this).data('id'));
-    });
-  }
-
-  // Página de detalhes
-  if (window.location.pathname.includes('detalhes.html')) {
-    loadMovieDetails();
-  }
-
-  // Configuração do carrossel
-  setupCarousel();
-});
-
-// ========== CÓDIGOS DE TERCEIROS ========== //
-
+// ========== CARROSSEL ========== //
 function setupCarousel() {
   const carousels = document.querySelectorAll('.movie-list-wrapper');
 
@@ -378,7 +320,10 @@ function setupCarousel() {
     const arrowLeft = carousel.querySelector('.fa-chevron-left');
     const arrowRight = carousel.querySelector('.fa-chevron-right');
 
-    if (!movieList) return;
+    if (!movieList) {
+      console.error('Elemento .movie-list não encontrado');
+      return;
+    }
 
     const movieItem = movieList.querySelector('.movie-list-item');
     const scrollAmount = movieItem ? movieItem.offsetWidth * 2 : 500;
@@ -411,34 +356,69 @@ function setupCarousel() {
   });
 }
 
-// Navbar scroll (otimizado)
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  navbar.style.background = window.scrollY > 50
-    ? "rgba(0, 0, 0, 0.7)"
-    : "linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))";
-});
+// ========== EVENT LISTENERS ========== //
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM carregado - Iniciando configuração');
 
-// Search toggle (otimizado)
-document.querySelector('.search-icon').addEventListener('click', function(e) {
-  e.stopPropagation(); // Prevent the click from bubbling up
+  // Adiciona eventos aos itens existentes
+  document.querySelectorAll('.movie-list-item').forEach(item => {
+    item.addEventListener('click', function() {
+      redirectToDetails(this.dataset.id);
+    });
+  });
+
+  // Configura a página de detalhes
+  if (window.location.pathname.includes('detalhes.html')) {
+    document.body.classList.add('detalhes-page');
+    loadMovieDetails();
+  }
+
+  // Configura o carrossel
+  setupCarousel();
+
+  // Navbar scroll
+  const navbar = document.querySelector(".navbar");
+  if (navbar) {
+    window.addEventListener("scroll", () => {
+      navbar.style.background = window.scrollY > 50
+        ? "rgba(0, 0, 0, 0.7)"
+        : "linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))";
+    });
+  }
+
+  // Search toggle
+  const searchIcon = document.querySelector('.search-icon');
   const searchBar = document.querySelector('.search-bar');
-  searchBar.classList.toggle('active');
   
-  // Focus on the input when it appears
-  if (searchBar.classList.contains('active')) {
-    searchBar.focus();
+  if (searchIcon && searchBar) {
+    searchIcon.addEventListener('click', function(e) {
+      e.stopPropagation();
+      searchBar.classList.toggle('active');
+      if (searchBar.classList.contains('active')) {
+        searchBar.focus();
+      }
+    });
+
+    document.addEventListener('click', function() {
+      searchBar.classList.remove('active');
+    });
+
+    searchBar.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
   }
 });
 
-// Close search when clicking anywhere else
-document.addEventListener('click', function() {
-  const searchBar = document.querySelector('.search-bar');
-  searchBar.classList.remove('active');
-});
-
-// Prevent search bar from closing when clicking inside it
-document.querySelector('.search-bar').addEventListener('click', function(e) {
-  e.stopPropagation();
-});
-
+function showError(message) {
+  console.error(message);
+  const contentDetails = document.getElementById('content-details');
+  if (contentDetails) {
+    contentDetails.innerHTML = `
+      <div class="error-movie">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>${message}</p>
+        <button onclick="window.location.href='index.html';">Voltar</button>
+      </div>
+    `;
+  }
+}
