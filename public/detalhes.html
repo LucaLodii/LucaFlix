@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LucaFlix - Detalhes</title>
+  <link rel="stylesheet" href="assets/css/detalhes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+  </style>
+</head>
+
+<body class="detalhes-page">
+  <header class="navbar">
+    <!-- MOVER o input checkbox PARA AQUI (fora do navbar-container) -->
+    <input type="checkbox" id="menuToggle">
+    <label for="menuToggle" class="menu-icon2">
+      <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-xmark"></i>
+    </label>
+
+    <div class="navbar-container">
+      <div class="logo-container">
+        <img class="logo-picture" src="assets/img/LucaFlixLogo.png" alt="">
+        <h1 class="logo">LucaFlix</h1>
+      </div>
+
+        <div class="menu-container">
+            <ul class="menu-list">
+            <li class="menu-list-item active"><button onclick="window.location.href='index.html';">Home</button></li>
+            <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Gênero</button></li>
+            <li class="menu-list-item"><button onclick="window.location.href='favoritos.html';">Meus Favoritos</button></li>
+            <li class="menu-list-item"><button onclick="window.location.href='cadastro.html';">Cadastro de Filmes</button></li>
+            </ul>
+        </div>
+
+      <div class="profile-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" class="search-bar" placeholder="Search...">
+        <div class="custom-dropdown">
+          <button class="dropdown-btn">
+            <img class="profile-picture" src="assets/img/profilePicture.jpg" alt="">
+            <span class="profile-text">Perfil</span>
+            <i class="fas fa-caret-down dropdown-icon"></i>
+          </button>
+          <ul class="dropdown-content">
+            <li><button class="dropdown-item">Minha conta</button></li>
+            </li>
+            <li><button class="dropdown-item">Configurações</button></li>
+            <li class="divider"></li>
+            <li>
+              <button class="dropdown-item active" id="btn-sair">
+                <i class="fas fa-sign-out-alt me-2"></i> Sair
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div id="content-details" class="featured-content">
+        <div class="movie-detail">
+          <img id="filme-logo" src="assets/img/default.png">
+          <h1 id="filme-titulo" class="movie-title"></h1>
+          <p id="filme-oscars" class="movie-oscars"></p>
+          <div class="movie-description">
+            <p><strong>Descrição:</strong> <span id="filme-descricao"></span></p>
+          </div>
+
+          <div class="movie-meta-container">
+            <ul class="horizontal-meta-list">
+              <li><strong>IMDb:</strong> <span id="filme-avaliacao"></span></li>
+              <li><span id="filme-duracao"></span></li>
+              <li><span id="filme-ano"></span></li>
+              <li><span id="filme-genero"></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="assets/scripts/app.js"></script>
+</body>
+
+</html>

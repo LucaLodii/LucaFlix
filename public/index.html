@@ -1,0 +1,284 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LucaFlix</title>
+
+  <!-- CSS Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <!-- Menu para dispositivos móveis -->
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle" class="menu-icon2">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+      <div class="logo-container">
+        <img class="logo-picture" src="assets/img/LucaFlixLogo.png" alt="">
+        <h1 class="logo">LucaFlix</h1>
+      </div>
+
+      <div class="menu-container">
+        <ul class="menu-list">
+          <li class="menu-list-item active"><button onclick="window.location.href='index.html';">Home</button></li>
+          <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Gênero</button></li>
+          <li class="menu-list-item"><button onclick="window.location.href='favoritos.html';">Meus Favoritos</button>
+          </li>
+          <li class="menu-list-item"><button onclick="window.location.href='cadastro.html';">Cadastro de Filmes</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="profile-container">
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+          <input type="text" class="search-bar" placeholder="Buscar filmes..." aria-label="Barra de pesquisa de filmes">
+          <div class="search-results" aria-live="polite"></div>
+        </div>
+        <div class="custom-dropdown">
+          <button class="dropdown-btn" aria-expanded="false" aria-controls="profile-dropdown"
+            aria-label="Menu do perfil">
+            <img class="profile-picture" src="assets/img/profilePicture.jpg" alt="Foto do perfil" width="32"
+              height="32">
+            <span class="profile-text">Perfil</span>
+            <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
+          </button>
+          <ul id="profile-dropdown" class="dropdown-content" role="menu">
+            <li role="none">
+              <button class="dropdown-item" role="menuitem">
+                <i class="fas fa-user me-2" aria-hidden="true"></i>
+                Minha conta
+              </button>
+            </li>
+            <li role="none">
+              <button class="dropdown-item" role="menuitem">
+                <i class="fas fa-cog me-2" aria-hidden="true"></i>
+                Configurações
+              </button>
+            </li>
+            <li class="divider" role="separator"></li>
+            <li role="none">
+              <button class="dropdown-item active" id="btn-sair" role="menuitem">
+                <i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>
+                Sair
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="featured-content">
+      <!--COMEÇO DO CARROSSEL-->
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video autoplay muted loop playsinline class="d-block w-100">
+              <source src="assets/trailer/LoTR_TRAILER_3.webm" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>O Senhor dos Anéis: O Retorno do Rei</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video autoplay muted loop playsinline class="d-block w-100">
+              <source src="assets/trailer/TrailerMeninoEAGarça.webm" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>O Menino e a Garça</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video autoplay muted loop playsinline class="d-block w-100">
+              <source src="assets/trailer/hp2.webm" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Harry Potter e a Câmara dos Segredos</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!--FIM DO CARROSSEL-->
+
+    <div class="movie-list-container">
+      <h1 class="movie-list-title">Obras inspiradas em J.R.R. Tolkien</h1>
+      <div class="movie-list-wrapper">
+        <i class="fas fa-chevron-left arrow"></i>
+        <div class="movie-list">
+
+          <div class="movie-list-item" data-id="lotr1"></div>
+
+          <div class="movie-list-item" data-id="lotr2"></div>
+
+          <div class="movie-list-item" data-id="lotr3"></div>
+
+          <div class="movie-list-item" data-id="hobbit1"></div>
+
+          <div class="movie-list-item" data-id="hobbit2"></div>
+
+          <div class="movie-list-item" data-id="hobbit3"></div>
+
+          <div class="movie-list-item" data-id="rohirrim"></div>
+
+          <div class="movie-list-item" data-id="aneis-do-poder">
+
+            <div class="movie-hover-panel">
+              <div class="button-row">
+                <button class="play-button"><i class="fas fa-play"></i></button>
+                <button class="action-button"><i class="fas fa-plus"></i></button>
+                <button class="action-button"><i class="fas fa-info-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <i class="fas fa-chevron-right arrow"></i>
+      </div>
+    </div>
+
+    <div class="movie-list-container">
+      <h1 class="movie-list-title">Obras inspiradas em J.K. Rowling</h1>
+      <div class="movie-list-wrapper">
+        <i class="fas fa-chevron-left arrow"></i>
+        <div class="movie-list">
+
+          <div class="movie-list-item" data-id="hp1"></div>
+
+          <div class="movie-list-item" data-id="hp2"></div>
+
+          <div class="movie-list-item" data-id="hp3"></div>
+
+          <div class="movie-list-item" data-id="hp4"></div>
+
+          <div class="movie-list-item" data-id="hp5"></div>
+
+          <div class="movie-list-item" data-id="hp6"></div>
+
+          <div class="movie-list-item" data-id="hp7p1">
+
+          </div>
+          <div class="movie-list-item" data-id="hp7p2"></div>
+
+        </div>
+        <i class="fas fa-chevron-right arrow"></i>
+      </div>
+    </div>
+
+    <div class="movie-list-container">
+      <h1 class="movie-list-title">Filmes do Estúdio Ghibli</h1>
+      <div class="movie-list-wrapper">
+        <i class="fas fa-chevron-left arrow"></i>
+        <div class="movie-list">
+
+          <div class="movie-list-item" data-id="chihiro"></div>
+
+          <div class="movie-list-item" data-id="castelo"></div>
+
+          <div class="movie-list-item" data-id="totoro"></div>
+
+          <div class="movie-list-item" data-id="kiki"></div>
+
+          <div class="movie-list-item" data-id="garça"></div>
+
+          <div class="movie-list-item" data-id="mononoke"></div>
+
+          <div class="movie-list-item" data-id="ponyo"></div>
+
+          <div class="movie-list-item" data-id="porco"></div>
+
+        </div>
+        <i class="fas fa-chevron-right arrow"></i>
+      </div>
+    </div>
+
+    <div class="movie-list-container">
+      <h1 class="movie-list-title">Filmes de Ação e Aventura</h1>
+      <div class="movie-list-wrapper">
+        <i class="fas fa-chevron-left arrow"></i>
+        <div class="movie-list">
+
+          <div class="movie-list-item" data-id="op1"></div>
+
+          <div class="movie-list-item" data-id="op-la"></div>
+
+          <div class="movie-list-item" data-id="op-red"></div>
+
+          <div class="movie-list-item" data-id="op-stampede"></div>
+
+          <div class="movie-list-item" data-id="op-gold"></div>
+
+          <div class="movie-list-item" data-id="op-heart"></div>
+
+          <div class="movie-list-item" data-id="op-z"></div>
+
+          <div class="movie-list-item" data-id="op-strong"></div>
+
+        </div>
+        <i class="fas fa-chevron-right arrow"></i>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <script src="assets/scripts/app.js"></script>
+
+</body>
+
+<footer>
+  <div class="footer-logos">
+    <i class="fa-brands fa-square-facebook"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-x-twitter"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <div class="footer-copwright">
+      <i class="fa-regular fa-copyright"></i>
+      <p>2025-2999 LucaFlix Ltda.</p>
+    </div>
+  </div>
+</footer>
+
+</html>

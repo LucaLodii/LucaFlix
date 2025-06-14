@@ -1,0 +1,730 @@
+{
+  "usuarios": [
+    {
+      "id": "187cb7e5-e097-4224-8bc7-b610c855e2b1",
+      "login": "admin",
+      "senha": "123",
+      "nome": "Administrador do Sistema",
+      "email": "admin@abc.com"
+    },
+    {
+      "id": "ec37c83d-4b7f-458d-9e10-3fda7d37cd3e",
+      "login": "user",
+      "senha": "123",
+      "nome": "Usuario Comum",
+      "email": "user@abc.com"
+    }
+  ],
+  "filmes": [
+    {
+      "id": "lotr1",
+      "favorito": true,
+      "logo": "assets/img/Banner_lordOfTheRingsTheFellowshipOfTheRing.jpg",
+      "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+      "categoria": "tolkien",
+      "premiacoes": "4X Ganhador do OSCAR",
+      "descricao": "Frodo Bolseiro recebe um anel poderoso e embarca em uma jornada para destruí-lo antes que Sauron recupere seu poder.",
+      "avaliacao": "8.8",
+      "duracao": "2 h 58 min",
+      "ano": "2001",
+      "diretor": "Peter Jackson",
+      "generos": [
+        "Fantasia",
+        "Aventura",
+        "Ação",
+        "Guerra"
+      ]
+    },
+    {
+      "id": "lotr2",
+      "favorito": false,
+      "logo": "assets/img/Banner_LOTR2.jpg",
+      "titulo": "O Senhor dos Anéis: As Duas Torres",
+      "categoria": "tolkien",
+      "premiacoes": "2X Ganhador do OSCAR",
+      "descricao": "A Sociedade se separa, enquanto Frodo segue rumo a Mordor e Aragorn luta contra as forças de Saruman.",
+      "avaliacao": "8.7",
+      "duracao": "2 h 59 min",
+      "ano": "2002",
+      "diretor": "Peter Jackson",
+      "generos": [
+        "Fantasia",
+        "Aventura",
+        "Ação",
+        "Guerra"
+      ]
+    },
+    {
+      "id": "lotr3",
+      "favorito": true,
+      "logo": "assets/img/Banner_LOTR3.jpg",
+      "titulo": "O Senhor dos Anéis: O Retorno do Rei",
+      "categoria": "tolkien",
+      "premiacoes": "11X Ganhador do OSCAR",
+      "descricao": "A batalha final pelo destino da Terra Média se aproxima enquanto Frodo se esforça para destruir o Anel.",
+      "avaliacao": "8.9",
+      "duracao": "3 h 21 min",
+      "ano": "2003",
+      "diretor": "Peter Jackson",
+      "generos": [
+        "Fantasia",
+        "Aventura",
+        "Ação",
+        "Guerra",
+        "Confronto Final"
+      ]
+    },
+    {
+      "id": "hobbit1",
+      "favorito": false,
+      "logo": "assets/img/Banner_Hobbit.jpg",
+      "titulo": "O Hobbit: Uma Jornada Inesperada",
+      "categoria": "tolkien",
+      "premiacoes": "1X Ganhador do OSCAR",
+      "descricao": "Bilbo Bolseiro se junta a um grupo de anões para recuperar o reino de Erebor do dragão Smaug.",
+      "avaliacao": "7.8",
+      "duracao": "2 h 49 min",
+      "ano": "2012",
+      "diretor": "Peter Jackson",
+      "generos": [
+        "Fantasia",
+        "Aventura",
+        "Ação"
+      ]
+    },
+    {
+      "id": "hobbit2",
+      "favorito": true,
+      "logo": "assets/img/Banner_Hobbit2.jpg",
+      "titulo": "O Hobbit: A Desolação de Smaug",
+      "categoria": "tolkien",
+      "premiacoes": "vencedor Saturn Award",
+      "descricao": "A jornada continua enquanto a companhia enfrenta aranhas gigantes, elfos e o perigoso dragão Smaug.",
+      "avaliacao": "7.8",
+      "duracao": "2 h 41 min",
+      "ano": "2013",
+      "diretor": "Peter Jackson",
+      "generos": [
+        "Fantasia",
+        "Aventura",
+        "Ação"
+      ]
+    },
+    {
+      "id": "hobbit3",
+      "favorito": false,
+      "logo": "assets/img/Banner_Hobbit3.jpg",
+      "titulo": "O Hobbit: A Batalha dos Cinco Exércitos",
+      "categoria": "tolkien",
+      "premiacoes": "Indicado a 3 Oscars",
+      "descricao": "A disputa pelo tesouro de Erebor desencadeia uma guerra épica entre cinco exércitos.",
+      "avaliacao": "7.4",
+      "duracao": "2 h 24 min",
+      "ano": "2014",
+      "diretor": "Peter Jackson",
+      "generos": [
+        "Fantasia",
+        "Aventura",
+        "Ação",
+        "Confronto Final"
+      ]
+    },
+    {
+      "id": "rohirrim",
+      "favorito": false,
+      "logo": "assets/img/Banner_Rohirrim.webp",
+      "titulo": "Senhor dos Anéis: A Guerra dos Rohirrim",
+      "categoria": "tolkien",
+      "premiacoes": "Indicado em 2025",
+      "descricao": "A história do Rei Helm Pé-de-Marte e a lendária batalha no Abismo de Helm, séculos antes dos eventos da trilogia original.",
+      "avaliacao": "N/A",
+      "duracao": "2 h 10 min",
+      "ano": "2024",
+      "diretor": "Kenji Kamiyama",
+      "generos": [
+        "Fantasia",
+        "Ação",
+        "Guerra",
+        "Animação"
+      ]
+    },
+    {
+      "id": "aneis-do-poder",
+      "favorito": false,
+      "logo": "assets/img/Banner_RingsOfPower.jpg",
+      "titulo": "O Senhor dos Anéis: Os Anéis de Poder",
+      "categoria": "tolkien",
+      "premiacoes": "1 Emmy",
+      "descricao": "Milênios antes de 'O Hobbit', esta série explora a Segunda Era da Terra-média, incluindo a forja dos Anéis de Poder.",
+      "avaliacao": "6.9",
+      "duracao": "50 min/ep",
+      "ano": "2022",
+      "diretor": "J.A. Bayona",
+      "generos": [
+        "Fantasia",
+        "Aventura",
+        "Drama"
+      ]
+    },
+    {
+      "id": "hp1",
+      "favorito": true,
+      "logo": "assets/img/Banner_HP1.jpg",
+      "titulo": "Harry Potter e a Pedra Filosofal",
+      "categoria": "rowling",
+      "premiacoes": "3 Indicações ao OSCAR",
+      "descricao": "Harry descobre que é um bruxo e começa sua jornada em Hogwarts, onde enfrenta seu primeiro grande desafio.",
+      "avaliacao": "7.6",
+      "duracao": "2 h 32 min",
+      "ano": "2001",
+      "diretor": "Chris Columbus",
+      "generos": [
+        "Infantil",
+        "Aventura",
+        "Fantasia",
+        "Mistério"
+      ]
+    },
+    {
+      "id": "hp2",
+      "favorito": false,
+      "logo": "assets/img/Banner_HP2.jpg",
+      "titulo": "Harry Potter e a Câmara Secreta",
+      "categoria": "rowling",
+      "premiacoes": "3 indicações ao BAFTA FILM AWARDS",
+      "descricao": "Estranhos ataques começam a ocorrer em Hogwarts, levando Harry a desvendar o mistério da Câmara Secreta.",
+      "avaliacao": "7.4",
+      "duracao": "2 h 41 min",
+      "ano": "2002",
+      "diretor": "Chris Columbus",
+      "generos": [
+        "Infantil",
+        "Aventura",
+        "Sombrio",
+        "Mistério"
+      ]
+    },
+    {
+      "id": "hp3",
+      "favorito": false,
+      "logo": "assets/img/Banner_HP3.avif",
+      "titulo": "Harry Potter e o Prisioneiro de Azkaban",
+      "categoria": "rowling",
+      "premiacoes": "2 indicações ao OSCARS",
+      "descricao": "Sirius Black escapa de Azkaban, e Harry descobre verdades sobre seu passado e seus pais.",
+      "avaliacao": "7.9",
+      "duracao": "2 h 22 min",
+      "ano": "2004",
+      "diretor": "Alfonso Cuarón",
+      "generos": [
+        "Fantasia",
+        "Aventura",
+        "Sombrio"
+      ]
+    },
+    {
+      "id": "hp4",
+      "favorito": false,
+      "logo": "assets/img/Banner_HP4.avif",
+      "titulo": "Harry Potter e o Cálice de Fogo",
+      "categoria": "rowling",
+      "premiacoes": "Vencedor do BAFTA FILM AWARD",
+      "descricao": "Harry é misteriosamente selecionado para o Torneio Tribruxo e enfrenta desafios mortais.",
+      "avaliacao": "7.7",
+      "duracao": "2 h 37 min",
+      "ano": "2005",
+      "diretor": "Mike Newell",
+      "generos": [
+        "Fantasia",
+        "Aventura",
+        "Sombrio"
+      ]
+    },
+    {
+      "id": "hp5",
+      "favorito": false,
+      "logo": "assets/img/Banner_HP5.avif",
+      "titulo": "Harry Potter e a Ordem da Fênix",
+      "categoria": "rowling",
+      "premiacoes": "2 indicações ao BAFTA FILM AWARDS",
+      "descricao": "O Ministério da Magia nega o retorno de Voldemort, enquanto Harry lidera a Armada de Dumbledore.",
+      "avaliacao": "7.5",
+      "duracao": "2 h 18 min",
+      "ano": "2007",
+      "diretor": "David Yates",
+      "generos": [
+        "Ficção Científica",
+        "Fantasia",
+        "Ambicioso"
+      ]
+    },
+    {
+      "id": "hp6",
+      "favorito": false,
+      "logo": "assets/img/Banner_HP6.jpg",
+      "titulo": "Harry Potter e o Enigma do Príncipe",
+      "categoria": "rowling",
+      "premiacoes": "Indicado ao OSCAR",
+      "descricao": "Dumbledore revela detalhes do passado de Voldemort e Harry descobre os horcruxes.",
+      "avaliacao": "7.6",
+      "duracao": "2 h 33 min",
+      "ano": "2009",
+      "diretor": "David Yates",
+      "generos": [
+        "Ficção Científica",
+        "Fantasia",
+        "Sombrio"
+      ]
+    },
+    {
+      "id": "hp7p1",
+      "favorito": false,
+      "logo": "assets/img/Banner_HP7_1.jpg",
+      "titulo": "Harry Potter e as Relíquias da Morte - Parte 1",
+      "categoria": "rowling",
+      "premiacoes": "2 Indicações ao OSCAR",
+      "descricao": "Harry, Rony e Hermione fogem de Hogwarts para destruir os horcruxes de Voldemort.",
+      "avaliacao": "7.7",
+      "duracao": "2 h 26 min",
+      "ano": "2010",
+      "diretor": "David Yates",
+      "generos": [
+        "Fantasia",
+        "Ambicioso",
+        "Aventura"
+      ]
+    },
+    {
+      "id": "hp7p2",
+      "favorito": false,
+      "logo": "assets/img/Banner_HP7_2.jpg",
+      "titulo": "Harry Potter e as Relíquias da Morte - Parte 2",
+      "categoria": "rowling",
+      "premiacoes": "Vencedor do BAFTA FILM AWARD",
+      "descricao": "A batalha final em Hogwarts determina o destino do mundo bruxo e o confronto entre Harry e Voldemort.",
+      "avaliacao": "8.1",
+      "duracao": "2 h 10 min",
+      "ano": "2011",
+      "diretor": "David Yates",
+      "generos": [
+        "Fantasia",
+        "Aventura",
+        "Confronto Final"
+      ]
+    },
+    {
+      "id": "chihiro",
+      "favorito": false,
+      "logo": "assets/img/Banner_Chihiro.webp",
+      "titulo": "A Viagem de Chihiro",
+      "categoria": "ghibli",
+      "premiacoes": "1 Oscar",
+      "descricao": "Chihiro e seus pais entram em um mundo mágico, onde ela deve trabalhar para resgatar seus pais transformados em porcos.",
+      "avaliacao": "8.6",
+      "duracao": "2 h 5 min",
+      "ano": "2001",
+      "generos": [
+        "Fantasia",
+        "Animação",
+        "Drama"
+      ]
+    },
+    {
+      "id": "castelo",
+      "favorito": true,
+      "logo": "assets/img/Banner_CasteloAnimado.webp",
+      "titulo": "O Castelo Animado",
+      "categoria": "ghibli",
+      "premiacoes": "1 Indicação",
+      "descricao": "Sophie, transformada em idosa por uma bruxa, embarca em uma jornada com o misterioso mago Howl e seu castelo ambulante.",
+      "avaliacao": "8.2",
+      "duracao": "1 h 59 min",
+      "ano": "2004",
+      "generos": [
+        "Fantasia",
+        "Animação",
+        "Romance"
+      ]
+    },
+    {
+      "id": "totoro",
+      "favorito": false,
+      "logo": "assets/img/Banner_MeuAmigoTotoro.webp",
+      "titulo": "Meu Amigo Totoro",
+      "categoria": "ghibli",
+      "premiacoes": "Prêmio da Academia Japonesa de Cinema",
+      "descricao": "As irmãs Satsuki e Mei descobrem criaturas mágicas na floresta e fazem amizade com o gentil espírito da natureza, Totoro.",
+      "avaliacao": "8.2",
+      "duracao": "1 h 26 min",
+      "ano": "1988",
+      "generos": [
+        "Animação",
+        "Fantasia",
+        "Família",
+        "Infantil"
+      ]
+    },
+    {
+      "id": "kiki",
+      "favorito": false,
+      "logo": "assets/img/Banner_ServiçosDeEntregasDaKiki.webp",
+      "titulo": "O Serviço de Entregas da Kiki",
+      "categoria": "ghibli",
+      "premiacoes": "Prêmio da Academia Japonesa de Cinema",
+      "descricao": "Kiki, uma jovem bruxa em treinamento, abre um serviço de entregas aéreo enquanto busca encontrar seu lugar no mundo.",
+      "avaliacao": "7.8",
+      "duracao": "1 h 43 min",
+      "ano": "1989",
+      "generos": [
+        "Fantasia",
+        "Animação",
+        "Família"
+      ]
+    },
+    {
+      "id": "garça",
+      "favorito": false,
+      "logo": "assets/img/Banner_OMeninoEAGarça.webp",
+      "titulo": "O Menino e a Garça",
+      "categoria": "ghibli",
+      "premiacoes": "1 Oscar",
+      "descricao": "Um jovem lida com o luto e descobre um mundo mágico após encontrar uma garça enigmática que o guia por uma jornada fantástica.",
+      "avaliacao": "7.6",
+      "duracao": "2 h 4 min",
+      "ano": "2023",
+      "generos": [
+        "Fantasia",
+        "Animação",
+        "Drama"
+      ]
+    },
+    {
+      "id": "mononoke",
+      "favorito": false,
+      "logo": "assets/img/Banner_PrincesaMononoke.webp",
+      "titulo": "Princesa Mononoke",
+      "categoria": "ghibli",
+      "premiacoes": "Prêmio Mainichi de Melhor Filme de Animação",
+      "descricao": "Ashitaka se envolve na luta entre humanos e espíritos da floresta, encontrando a guerreira San e tentando restaurar a paz.",
+      "avaliacao": "8.4",
+      "duracao": "2 h 14 min",
+      "ano": "1997",
+      "generos": [
+        "Fantasia",
+        "Ação",
+        "Animação",
+        "Drama"
+      ]
+    },
+    {
+      "id": "ponyo",
+      "favorito": false,
+      "logo": "assets/img/Banner_Ponyo.webp",
+      "titulo": "Ponyo: Uma Amizade que Veio do Mar",
+      "categoria": "ghibli",
+      "premiacoes": "Mainichi Film Award",
+      "descricao": "Ponyo, um peixinho mágico, deseja se tornar humana após se apaixonar por um menino chamado Sosuke.",
+      "avaliacao": "7.7",
+      "duracao": "1 h 41 min",
+      "ano": "2008",
+      "generos": [
+        "Fantasia",
+        "Animação",
+        "Família"
+      ]
+    },
+    {
+      "id": "porco",
+      "favorito": true,
+      "logo": "assets/img/Banner_Porcorosso.webp",
+      "titulo": "Porco Rosso: O Último Herói Romântico",
+      "categoria": "ghibli",
+      "premiacoes": "Maior bilheteria do Japão em 1992",
+      "descricao": "Um piloto amaldiçoado com a aparência de um porco combate piratas aéreos enquanto lida com seu passado misterioso.",
+      "avaliacao": "7.8",
+      "duracao": "1 h 33 min",
+      "ano": "1992",
+      "generos": [
+        "Aventura",
+        "Animação",
+        "Guerra"
+      ]
+    },
+    {
+      "id": "op1",
+      "favorito": true,
+      "logo": "assets/img/Banner_OP.webp",
+      "titulo": "One Piece",
+      "categoria": "acao",
+      "premiacoes": "Melhor Série de Anime - Crunchyroll Awards",
+      "descricao": "A jornada de Monkey D. Luffy e sua tripulação em busca do tesouro lendário One Piece para se tornar o Rei dos Piratas.",
+      "avaliacao": "8.8",
+      "duracao": "24 min por episódio",
+      "ano": "1999",
+      "diretor": "Kōnosuke Uda",
+      "generos": [
+        "Aventura",
+        "Fantasia"
+      ]
+    },
+    {
+      "id": "op-la",
+      "favorito": false,
+      "logo": "assets/img/Banner_OPLiveAction.jpg",
+      "titulo": "One Piece Live Action",
+      "categoria": "acao",
+      "premiacoes": "2x Emmy Infatil",
+      "descricao": "Adaptação em live-action da jornada de Luffy e seus amigos.",
+      "avaliacao": "8.3",
+      "duracao": "45 min por episódio",
+      "ano": "2023",
+      "diretor": "Marc Jobst",
+      "generos": [
+        "Live Action",
+        "Aventura",
+        "Fantasia"
+      ]
+    },
+    {
+      "id": "op-red",
+      "favorito": false,
+      "logo": "assets/img/Banner_OPRed.webp",
+      "titulo": "One Piece Film: Red",
+      "categoria": "acao",
+      "premiacoes": "Prêmio de música e melhor animação no Japão",
+      "descricao": "Uta, filha de Shanks, revela um segredo que impacta o mundo.",
+      "avaliacao": "7.1",
+      "duracao": "115 min",
+      "ano": "2022",
+      "diretor": "Gorō Taniguchi",
+      "generos": [
+        "Música",
+        "Drama"
+      ]
+    },
+    {
+      "id": "op-stampede",
+      "favorito": false,
+      "logo": "assets/img/Banner_OPStampede.jpg",
+      "titulo": "One Piece: Stampede",
+      "categoria": "acao",
+      "premiacoes": "",
+      "descricao": "Piratas do mundo se reúnem para disputar um tesouro lendário.",
+      "avaliacao": "7.5",
+      "duracao": "101 min",
+      "ano": "2019",
+      "diretor": "Takashi Otsuka",
+      "generos": [
+        "Ação",
+        "Fantasia"
+      ]
+    },
+    {
+      "id": "op-gold",
+      "favorito": false,
+      "logo": "assets/img/Banner_OPGold.jpg",
+      "titulo": "One Piece Film: Gold",
+      "categoria": "acao",
+      "premiacoes": "",
+      "descricao": "Os Chapéus de Palha entram em um cassino flutuante cheio de perigos.",
+      "avaliacao": "7.2",
+      "duracao": "120 min",
+      "ano": "2016",
+      "diretor": "Hiroaki Miyamoto",
+      "generos": [
+        "Ação",
+        "Fantasia"
+      ]
+    },
+    {
+      "id": "op-heart",
+      "favorito": false,
+      "logo": "assets/img/Banner_OPHeartOfGold.webp",
+      "titulo": "One Piece: Heart of Gold",
+      "categoria": "acao",
+      "premiacoes": "",
+      "descricao": "A tripulação busca o tesouro Pure Gold enfrentando novos desafios.",
+      "avaliacao": "7.0",
+      "duracao": "104 min",
+      "ano": "2016",
+      "diretor": "Tatsuya Nagamine",
+      "generos": [
+        "Ação",
+        "Fantasia"
+      ]
+    },
+    {
+      "id": "op-z",
+      "favorito": false,
+      "logo": "assets/img/Banner_OPZ.webp",
+      "titulo": "One Piece Film: Z",
+      "categoria": "acao",
+      "premiacoes": "",
+      "descricao": "Luffy enfrenta um ex-almirante que ameaça o governo mundial.",
+      "avaliacao": "7.9",
+      "duracao": "108 min",
+      "ano": "2012",
+      "diretor": "Tatsuya Nagamine",
+      "generos": [
+        "Ação",
+        "Fantasia"
+      ]
+    },
+    {
+      "id": "op-strong",
+      "favorito": false,
+      "logo": "assets/img/Banner_OPStrongWorld.webp",
+      "titulo": "One Piece: Strong World",
+      "categoria": "acao",
+      "premiacoes": "",
+      "descricao": "O lendário pirata Shiki reaparece com um plano maléfico. Depois de sequestrar sua companheira, Luffy e sua tripulação parte em sua busca.",
+      "avaliacao": "7.6",
+      "duracao": "114 min",
+      "ano": "2009",
+      "diretor": "Munehisa Sakai",
+      "generos": [
+        "Ação",
+        "Fantasia"
+      ]
+    },
+    {
+      "id": "OromGFw",
+      "favorito": false,
+      "logo": "",
+      "titulo": "Interestelar",
+      "premiacoes": "1 Oscar",
+      "descricao": "Um grupo de exploradores viaja através de um buraco de minhoca no espaço em uma tentativa de garantir a sobrevivência da humanidade.",
+      "avaliacao": "8.6",
+      "duracao": "169 min",
+      "ano": "2014",
+      "diretor": "Christopher Nolan",
+      "generos": [
+        "Ficção Científica",
+        "Drama",
+        "Aventura"
+      ]
+    },
+    {
+      "id": "novo1",
+      "titulo": "Filme Teste CRUD",
+      "generos": [
+        "Ação",
+        "Aventura"
+      ],
+      "avaliacao": 7.5,
+      "duracao": "2h 10min"
+    },
+    {
+      "titulo": "Tese2",
+      "ano": "2006",
+      "diretor": "Lodão",
+      "generos": [
+        "ação"
+      ],
+      "duracao": "18",
+      "avaliacao": "10",
+      "id": "-wQtMoI"
+    }
+  ],
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "Leanne Graham",
+      "cidade": "Belo Horizonte",
+      "categoria": "amigos",
+      "email": "Sincere@april.biz",
+      "telefone": "1-770-736-8031",
+      "website": "hildegard.org"
+    },
+    {
+      "id": 2,
+      "nome": "Ervin Howell",
+      "cidade": "Betim",
+      "categoria": "familia",
+      "email": "Shanna@melissa.tv",
+      "telefone": "010-692-6593",
+      "website": "anastasia.net"
+    },
+    {
+      "id": 3,
+      "nome": "Clementine Bauch",
+      "cidade": "Rio de Janeiro",
+      "categoria": "trabalho",
+      "email": "Nathan@yesenia.net",
+      "telefone": "1-463-123-4447",
+      "website": "ramiro.info"
+    },
+    {
+      "id": 4,
+      "nome": "Patricia Lebsack",
+      "cidade": "Betim",
+      "categoria": "trabalho",
+      "email": "Julianne.OConner@kory.org",
+      "telefone": "493-170-9623 x156",
+      "website": "kale.biz"
+    },
+    {
+      "id": 5,
+      "nome": "Chelsey Dietrich",
+      "cidade": "São Paulo",
+      "categoria": "familia",
+      "email": "Lucio_Hettinger@annie.ca",
+      "telefone": "(254)954-1289",
+      "website": "demarco.info"
+    },
+    {
+      "id": 6,
+      "nome": "Mrs. Dennis Schulist",
+      "cidade": "Rio de Janeiro",
+      "categoria": "trabalho",
+      "email": "Karley_Dach@jasper.info",
+      "telefone": "1-477-935-8478",
+      "website": "ola.org"
+    },
+    {
+      "id": 7,
+      "nome": "Kurtis Weissnat",
+      "cidade": "Belo Horizonte",
+      "categoria": "amigos",
+      "email": "Telly.Hoeger@billy.biz",
+      "telefone": "210.067.6132",
+      "website": "elvis.io"
+    },
+    {
+      "id": 8,
+      "nome": "Nicholas Runolfsdottir V",
+      "cidade": "Belo Horizonte",
+      "categoria": "familia",
+      "email": "Sherwood@rosamond.me",
+      "telefone": "586.493.6943",
+      "website": "jacynthe.com"
+    },
+    {
+      "id": 9,
+      "nome": "Glenna Reichert",
+      "cidade": "Betim",
+      "categoria": "amigos",
+      "email": "Chaim_McDermott@dana.io",
+      "telefone": "(775)976-6794",
+      "website": "conrad.com"
+    },
+    {
+      "id": 10,
+      "nome": "Clementina DuBuque",
+      "cidade": "São Paulo",
+      "categoria": "amigos",
+      "email": "Rey.Padberg@karina.biz",
+      "telefone": "024-648-3804",
+      "website": "ambrose.net"
+    },
+    {
+      "nome": "Luca G. Lodi",
+      "telefone": "31-999999",
+      "email": "lucaglodi@gmail",
+      "cidade": "Belo Horizonte",
+      "categoria": "Amigos",
+      "website": "http://localhost:3000/crud.html",
+      "id": 11
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Filmes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/crud.css">
+</head>
+
+<header class="navbar">
+    <div class="navbar-container">
+        <!-- Menu para dispositivos móveis -->
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle" class="menu-icon2">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </label>
+        <div class="logo-container">
+            <img class="logo-picture" src="assets/img/LucaFlixLogo.png" alt="">
+            <h1 class="logo">LucaFlix</h1>
+        </div>
+
+        <div class="menu-container">
+            <ul class="menu-list">
+            <li class="menu-list-item active"><button onclick="window.location.href='index.html';">Home</button></li>
+            <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Gênero</button></li>
+            <li class="menu-list-item"><button onclick="window.location.href='favoritos.html';">Meus Favoritos</button></li>
+            <li class="menu-list-item"><button onclick="window.location.href='cadastro.html';">Cadastro de Filmes</button></li>
+            </ul>
+        </div>
+
+        <div class="profile-container">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="search-bar" placeholder="Search...">
+            <div class="custom-dropdown">
+                <button class="dropdown-btn">
+                    <img class="profile-picture" src="assets/img/profilePicture.jpg" alt="">
+                    <span class="profile-text">Perfil</span>
+                    <i class="fas fa-caret-down dropdown-icon"></i>
+                </button>
+                <ul class="dropdown-content">
+                    <li><button class="dropdown-item">Minha conta</button></li>
+                    </li>
+                    <li><button class="dropdown-item">Configurações</button></li>
+                    <li class="divider"></li>
+                    <li>
+                        <button class="dropdown-item active" id="btn-sair">
+                            <i class="fas fa-sign-out-alt me-2"></i> Sair
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body onload="initFilmes()">
+    <div class="container">
+        <div class="lista-contatos">
+            <div class="row">
+                <div id="msg" class="col-sm-10 offset-sm-1"></div>
+            </div>
+
+            <form id="form-filme">
+                <h1 class="titulo-crud">Cadastro de Filmes</h1>
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                        <label for="inputId">ID</label>
+                        <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                    </div>
+                    <div class="col-sm-8">
+                        <label for="inputTitulo">Título (*)</label>
+                        <input type="text" class="form-control" id="inputTitulo" required placeholder="Nome do filme">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-5">
+                        <label for="inputAno">Ano (*)</label>
+                        <input type="text" class="form-control" id="inputAno" required placeholder="Ano de lançamento">
+                    </div>
+                    <div class="col-sm-7">
+                        <label for="inputDiretor">Diretor (*)</label>
+                        <input type="text" class="form-control" id="inputDiretor" required
+                            placeholder="Diretor do filme">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputGenero">Gênero</label>
+                        <input type="text" class="form-control" id="inputGenero" placeholder="Gênero principal">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="inputDuracao">Duração (min)</label>
+                        <input type="text" class="form-control" id="inputDuracao" required
+                            placeholder="Duração em minutos">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="inputAvaliacao">Avaliação (*)</label>
+                        <input type="text" class="form-control" id="inputAvaliacao" required
+                            placeholder="Nota de 0 a 10">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                        <small>(*) Campos obrigatórios</small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
+                        <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
+                        <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
+                        <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form">
+                        <a href="minhaLista.html"><input type="button" class="btn btn-warning" id="btnClear"
+                                value="Pesquisar Filmes"></a>
+                    </div>
+                </div>
+            </form>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="grid-filmes" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Título</th>
+                                <th scope="col">Ano</th>
+                                <th scope="col">Diretor</th>
+                                <th scope="col">Gênero</th>
+                                <th scope="col">Duração</th>
+                                <th scope="col">Avaliação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-filmes"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="assets/scripts/app.js"></script> <!-- Removi o crud.js -->
+</body>
+
+<footer>
+    <div class="footer-logos">
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <div class="footer-copwright">
+            <i class="fa-regular fa-copyright"></i>
+            <p>2025-2999 LucaFlix Ltda.</p>
+        </div>
+    </div>
+</footer>
+
+</html>

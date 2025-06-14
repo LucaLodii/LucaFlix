@@ -1,0 +1,208 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LucaFlix</title>
+
+  <link rel="stylesheet" href="assets/css/genero.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="assets/scripts/app.js"></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <!-- Menu para dispositivos móveis -->
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle" class="menu-icon2">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+      <div class="logo-container">
+        <img class="logo-picture" src="assets/img/LucaFlixLogo.png" alt="">
+        <h1 class="logo">LucaFlix</h1>
+      </div>
+      <div class="menu-container">
+        <ul class="menu-list">
+          <li class="menu-list-item active"><button onclick="window.location.href='index.html';">Home</button></li>
+          <li class="menu-list-item"><button onclick="window.location.href='genero.html';">Gênero</button></li>
+          <li class="menu-list-item"><button onclick="window.location.href='favoritos.html';">Meus Favoritos</button>
+          </li>
+          <li class="menu-list-item"><button onclick="window.location.href='cadastro.html';">Cadastro de Filmes</button>
+          </li>
+        </ul>
+      </div>
+      <div class="profile-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" class="search-bar" placeholder="Search...">
+        <div class="custom-dropdown">
+          <button class="dropdown-btn">
+            <img class="profile-picture" src="assets/img/profilePicture.jpg" alt="">
+            <span class="profile-text">Perfil</span>
+            <i class="fas fa-caret-down dropdown-icon"></i>
+          </button>
+          <ul class="dropdown-content">
+            <li><button class="dropdown-item">Minha conta</button></li>
+            </li>
+            <li><button class="dropdown-item">Configurações</button></li>
+            <li class="divider"></li>
+            <li>
+              <button class="dropdown-item active" id="btn-sair">
+                <i class="fas fa-sign-out-alt me-2"></i> Sair
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="featured-content">
+      <div class="graph">
+        <h2>Distribuição de Gêneros na LucaFlix</h2>
+        <canvas id="genreChart"></canvas>
+      </div>
+    </div>
+    <div class="movie-list-container">
+      <h1 class="movie-list-title">Obras inspiradas em J.R.R. Tolkien</h1>
+      <div class="movie-list-wrapper">
+        <i class="fas fa-chevron-left arrow"></i>
+        <div class="movie-list">
+
+          <div class="movie-list-item" data-id="lotr1"></div>
+
+          <div class="movie-list-item" data-id="lotr2"></div>
+
+          <div class="movie-list-item" data-id="lotr3"></div>
+
+          <div class="movie-list-item" data-id="hobbit1"></div>
+
+          <div class="movie-list-item" data-id="hobbit2"></div>
+
+          <div class="movie-list-item" data-id="hobbit3"></div>
+
+          <div class="movie-list-item" data-id="rohirrim"></div>
+
+          <div class="movie-list-item" data-id="aneis-do-poder">
+
+            <div class="movie-hover-panel">
+              <div class="button-row">
+                <button class="play-button"><i class="fas fa-play"></i></button>
+                <button class="action-button"><i class="fas fa-plus"></i></button>
+                <button class="action-button"><i class="fas fa-info-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <i class="fas fa-chevron-right arrow"></i>
+      </div>
+    </div>
+
+    <div class="movie-list-container">
+      <h1 class="movie-list-title">Obras inspiradas em J.K. Rowling</h1>
+      <div class="movie-list-wrapper">
+        <i class="fas fa-chevron-left arrow"></i>
+        <div class="movie-list">
+
+          <div class="movie-list-item" data-id="hp1"></div>
+
+          <div class="movie-list-item" data-id="hp2"></div>
+
+          <div class="movie-list-item" data-id="hp3"></div>
+
+          <div class="movie-list-item" data-id="hp4"></div>
+
+          <div class="movie-list-item" data-id="hp5"></div>
+
+          <div class="movie-list-item" data-id="hp6"></div>
+
+          <div class="movie-list-item" data-id="hp7p1">
+
+          </div>
+          <div class="movie-list-item" data-id="hp7p2"></div>
+
+        </div>
+        <i class="fas fa-chevron-right arrow"></i>
+      </div>
+    </div>
+
+    <div class="movie-list-container">
+      <h1 class="movie-list-title">Filmes do Estúdio Ghibli</h1>
+      <div class="movie-list-wrapper">
+        <i class="fas fa-chevron-left arrow"></i>
+        <div class="movie-list">
+
+          <div class="movie-list-item" data-id="chihiro"></div>
+
+          <div class="movie-list-item" data-id="castelo"></div>
+
+          <div class="movie-list-item" data-id="totoro"></div>
+
+          <div class="movie-list-item" data-id="kiki"></div>
+
+          <div class="movie-list-item" data-id="garça"></div>
+
+          <div class="movie-list-item" data-id="mononoke"></div>
+
+          <div class="movie-list-item" data-id="ponyo"></div>
+
+          <div class="movie-list-item" data-id="porco"></div>
+
+        </div>
+        <i class="fas fa-chevron-right arrow"></i>
+      </div>
+    </div>
+
+    <div class="movie-list-container">
+      <h1 class="movie-list-title">Filmes de Ação e Aventura</h1>
+      <div class="movie-list-wrapper">
+        <i class="fas fa-chevron-left arrow"></i>
+        <div class="movie-list">
+
+          <div class="movie-list-item" data-id="op1"></div>
+
+          <div class="movie-list-item" data-id="op-la"></div>
+
+          <div class="movie-list-item" data-id="op-red"></div>
+
+          <div class="movie-list-item" data-id="op-stampede"></div>
+
+          <div class="movie-list-item" data-id="op-gold"></div>
+
+          <div class="movie-list-item" data-id="op-heart"></div>
+
+          <div class="movie-list-item" data-id="op-z"></div>
+
+          <div class="movie-list-item" data-id="op-strong"></div>
+
+        </div>
+        <i class="fas fa-chevron-right arrow"></i>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<footer>
+  <div class="footer-logos">
+    <i class="fa-brands fa-square-facebook"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-x-twitter"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <div class="footer-copwright">
+      <i class="fa-regular fa-copyright"></i>
+      <p>2025-2999 LucaFlix Ltda.</p>
+    </div>
+  </div>
+</footer>
+
+</html>
