@@ -1,3 +1,16 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19624122&assignment_repo_type=AssignmentRepo)
+
+# Trabalho Prático 2 - Solução completa
+
+Nesta atividade, você irá completar o projeto anterior permitindo cadastrar e alterar dados da entidade principal do do seu projeto a partir da estrutura criada na etapa anterior com o JSONServer. Para isso, crie uma **página de cadastro (cadastro_[ENTIDADE].html)**, que deve mostrar um formulário para cadastrar a entidade principal do projeto. OBS: Troque [ENTIDADE] pelo nome da sua entidade principal.
+
+## Informações do trabalho
+
+- Nome: Luca Guimarães Lodi
+- Matricula:  885517
+- Proposta de projeto escolhida:  Catálogo de Filmes
+- Breve descrição sobre seu projeto:  Um site inspirado no universo de Tolkien com um estilo de "Terra Média" com referências a Trilogia "O Senhor Dos Anéis" e com um toque de clubismo.
+
 # LucaFlix
 
 LucaFlix é um site inspirado no universo de O Senhor dos Anéis. Ele permite que usuários explorem uma lista de filmes, adicionem favoritos, cadastrem novos filmes e também novos usuários.
