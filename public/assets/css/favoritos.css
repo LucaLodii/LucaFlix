@@ -34,15 +34,21 @@ body {
 }
 
 .logo-container {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
+  padding-right: 2vh;
+    padding-top: 1vh;
 }
 
 .logo-picture {
-    width: 42px;
-    height: 42px;
-    padding-right: 6px;
-    object-fit: cover;
+  width: 30%;
+  height: 30%;
+}
+
+.logo-img {
+    height: 75%;
+    width: 75%;
+    padding-top: 1.3vh;
 }
 
 .logo {
@@ -246,7 +252,7 @@ body {
 
 /* CONTAINER DOS FAVORITOS */
 .favoritos-container {
-    padding: 9vh 2.5vh;
+    padding: 12vh 2.5vh;
     width: 100%;
     overflow-x: auto;
     box-sizing: border-box;

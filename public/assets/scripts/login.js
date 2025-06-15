@@ -17,10 +17,10 @@
 
 // Página inicial de Login
 const LOGIN_URL = "./login.html";
-const apiUrl = '/usuarios';
+const apiUrl = '/contatos';
 
 // Objeto para o banco de dados de usuários baseado em JSON
-var db_usuarios = {};
+var db_contatos = {};
 
 // Objeto para o usuário corrente
 var usuarioCorrente = {};
@@ -46,7 +46,7 @@ function generateUUID() { // Public Domain/MIT
 
 // Dados de usuários para serem utilizados como carga inicial
 const dadosIniciais = {
-    usuarios: [
+    contatos: [
         { "id": generateUUID (), "login": "administrador", "senha": "123", "nome": "Administrador do Sistema", "email": "admin@abc.com"},
         { "id": generateUUID (), "login": "user", "senha": "123", "nome": "Usuario Comum", "email": "user@abc.com"},
     ]
@@ -64,7 +64,7 @@ function initLoginApp () {
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            db_usuarios = data;
+            db_contatos = data;
         })
         .catch(error => {
             console.error('Erro ao ler usuários via API JSONServer:', error);
@@ -76,10 +76,10 @@ function initLoginApp () {
 // Verifica se o login do usuário está ok e, se positivo, direciona para a página inicial
 function loginUser (login, senha) {
 
-    // Verifica todos os itens do banco de dados de usuarios 
+    // Verifica todos os itens do banco de dados de contatos 
     // para localizar o usuário informado no formulario de login
-    for (var i = 0; i < db_usuarios.length; i++) {
-        var usuario = db_usuarios[i];
+    for (var i = 0; i < db_contatos.length; i++) {
+        var usuario = db_contatos[i];
 
         // Se encontrou login, carrega usuário corrente e salva no Session Storage
         if (login == usuario.login && senha == usuario.senha) {
@@ -112,7 +112,7 @@ function addUser (nome, login, senha, email) {
 
     // Cria um objeto de usuario para o novo usuario 
     let newId = generateUUID ();
-    let usuario = { "id": newId, "login": login, "senha": senha, "nome": nome, "email": email , "admin": false};
+    let usuario = { "id": newId, "login": login, "senha": senha, "nome": nome, "email": email , "administrador": false};
 
     // Envia dados do novo usuário para ser inserido no JSON Server
     fetch(apiUrl, {
@@ -124,8 +124,8 @@ function addUser (nome, login, senha, email) {
     })
         .then(response => response.json())
         .then(data => {
-            // Adiciona o novo usuário na variável db_usuarios em memória
-            db_usuarios.push (usuario);
+            // Adiciona o novo usuário na variável db_contatos em memória
+            db_contatos.push (usuario);
             displayMessage("Usuário inserido com sucesso");
         })
         .catch(error => {

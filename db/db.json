@@ -1,20 +1,4 @@
 {
-  "usuarios": [
-    {
-      "id": "187cb7e5-e097-4224-8bc7-b610c855e2b1",
-      "login": "admin",
-      "senha": "123",
-      "nome": "Administrador do Sistema",
-      "email": "admin@abc.com"
-    },
-    {
-      "id": "ec37c83d-4b7f-458d-9e10-3fda7d37cd3e",
-      "login": "user",
-      "senha": "123",
-      "nome": "Usuario Comum",
-      "email": "user@abc.com"
-    }
-  ],
   "filmes": [
     {
       "id": "lotr1",
@@ -626,118 +610,107 @@
       "id": "-wQtMoI"
     }
   ],
-  
   "contatos": [
     {
       "id": 1,
       "nome": "Administrador do Sistema",
-      "cidade": "Belo Horizonte",
-      "categoria": "amigos",
-      "email": "admin@abc.com",
-      "telefone": "31-666666",
-      "website": "admim.net",
       "login": "administrador",
       "senha": "123",
-      "admin": true
+      "email": "admin@abc.com",
+      "administrador": true
     },
     {
       "id": 2,
       "nome": "Leanne Graham",
-      "cidade": "Belo Horizonte",
-      "categoria": "amigos",
       "email": "Sincere@april.biz",
-      "telefone": "1-770-736-8031",
-      "website": "hildegard.org"
+      "login": "leanne.g",
+      "senha": "leanne123"
     },
     {
       "id": 3,
       "nome": "Ervin Howell",
-      "cidade": "Betim",
-      "categoria": "familia",
       "email": "Shanna@melissa.tv",
-      "telefone": "010-692-6593",
-      "website": "anastasia.net"
+      "login": "ervin.h",
+      "senha": "ervin123"
     },
     {
       "id": 4,
       "nome": "Clementine Bauch",
-      "cidade": "Rio de Janeiro",
-      "categoria": "trabalho",
       "email": "Nathan@yesenia.net",
-      "telefone": "1-463-123-4447",
-      "website": "ramiro.info"
+      "login": "clementine.b",
+      "senha": "clem456"
     },
     {
       "id": 5,
       "nome": "Patricia Lebsack",
-      "cidade": "Betim",
-      "categoria": "trabalho",
       "email": "Julianne.OConner@kory.org",
-      "telefone": "493-170-9623 x156",
-      "website": "kale.biz"
+      "login": "patricia.l",
+      "senha": "pat789"
     },
     {
       "id": 6,
       "nome": "Chelsey Dietrich",
-      "cidade": "São Paulo",
-      "categoria": "familia",
       "email": "Lucio_Hettinger@annie.ca",
-      "telefone": "(254)954-1289",
-      "website": "demarco.info"
+      "login": "chelsey.d",
+      "senha": "chelsey456"
     },
     {
       "id": 7,
       "nome": "Mrs. Dennis Schulist",
-      "cidade": "Rio de Janeiro",
-      "categoria": "trabalho",
       "email": "Karley_Dach@jasper.info",
-      "telefone": "1-477-935-8478",
-      "website": "ola.org"
+      "login": "dennis.s",
+      "senha": "dennis123"
     },
     {
       "id": 8,
       "nome": "Kurtis Weissnat",
-      "cidade": "Belo Horizonte",
-      "categoria": "amigos",
       "email": "Telly.Hoeger@billy.biz",
-      "telefone": "210.067.6132",
-      "website": "elvis.io"
+      "login": "kurtis.w",
+      "senha": "kurtis456"
     },
     {
       "id": 9,
       "nome": "Nicholas Runolfsdottir V",
-      "cidade": "Belo Horizonte",
-      "categoria": "familia",
       "email": "Sherwood@rosamond.me",
-      "telefone": "586.493.6943",
-      "website": "jacynthe.com"
+      "login": "nicholas.r",
+      "senha": "nicho789"
     },
     {
       "id": 10,
       "nome": "Glenna Reichert",
-      "cidade": "Betim",
-      "categoria": "amigos",
       "email": "Chaim_McDermott@dana.io",
-      "telefone": "(775)976-6794",
-      "website": "conrad.com"
+      "login": "glenna.r",
+      "senha": "glenna123"
     },
     {
       "id": 11,
       "nome": "Clementina DuBuque",
-      "cidade": "São Paulo",
-      "categoria": "amigos",
       "email": "Rey.Padberg@karina.biz",
-      "telefone": "024-648-3804",
-      "website": "ambrose.net"
+      "login": "clementina.d",
+      "senha": "clem123"
     },
     {
+      "id": 12,
       "nome": "Luca G. Lodi",
-      "telefone": "31-999999",
       "email": "lucaglodi@gmail",
-      "cidade": "Belo Horizonte",
-      "categoria": "Amigos",
-      "website": "http://localhost:3000/crud.html",
-      "id": 12
+      "login": "luca.l",
+      "senha": "luca123"
+    },
+    {
+      "id": "bba62d97-4887-4762-956c-7f7f22662921",
+      "login": "teste1",
+      "senha": "132",
+      "nome": "teste",
+      "email": "testa@gmail.com",
+      "admin": false
+    },
+    {
+      "id": "af01e412-49df-4425-9c68-b1aefed51b7e",
+      "login": "teste2",
+      "senha": "231",
+      "nome": "2teste2",
+      "email": "teste@gmail.com",
+      "administrador": false
     }
   ]
 }
