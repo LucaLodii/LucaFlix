@@ -626,9 +626,22 @@
       "id": "-wQtMoI"
     }
   ],
+  
   "contatos": [
     {
       "id": 1,
+      "nome": "Administrador do Sistema",
+      "cidade": "Belo Horizonte",
+      "categoria": "amigos",
+      "email": "admin@abc.com",
+      "telefone": "31-666666",
+      "website": "admim.net",
+      "login": "administrador",
+      "senha": "123",
+      "admin": true
+    },
+    {
+      "id": 2,
       "nome": "Leanne Graham",
       "cidade": "Belo Horizonte",
       "categoria": "amigos",
@@ -637,7 +650,7 @@
       "website": "hildegard.org"
     },
     {
-      "id": 2,
+      "id": 3,
       "nome": "Ervin Howell",
       "cidade": "Betim",
       "categoria": "familia",
@@ -646,7 +659,7 @@
       "website": "anastasia.net"
     },
     {
-      "id": 3,
+      "id": 4,
       "nome": "Clementine Bauch",
       "cidade": "Rio de Janeiro",
       "categoria": "trabalho",
@@ -655,7 +668,7 @@
       "website": "ramiro.info"
     },
     {
-      "id": 4,
+      "id": 5,
       "nome": "Patricia Lebsack",
       "cidade": "Betim",
       "categoria": "trabalho",
@@ -664,7 +677,7 @@
       "website": "kale.biz"
     },
     {
-      "id": 5,
+      "id": 6,
       "nome": "Chelsey Dietrich",
       "cidade": "São Paulo",
       "categoria": "familia",
@@ -673,7 +686,7 @@
       "website": "demarco.info"
     },
     {
-      "id": 6,
+      "id": 7,
       "nome": "Mrs. Dennis Schulist",
       "cidade": "Rio de Janeiro",
       "categoria": "trabalho",
@@ -682,7 +695,7 @@
       "website": "ola.org"
     },
     {
-      "id": 7,
+      "id": 8,
       "nome": "Kurtis Weissnat",
       "cidade": "Belo Horizonte",
       "categoria": "amigos",
@@ -691,7 +704,7 @@
       "website": "elvis.io"
     },
     {
-      "id": 8,
+      "id": 9,
       "nome": "Nicholas Runolfsdottir V",
       "cidade": "Belo Horizonte",
       "categoria": "familia",
@@ -700,7 +713,7 @@
       "website": "jacynthe.com"
     },
     {
-      "id": 9,
+      "id": 10,
       "nome": "Glenna Reichert",
       "cidade": "Betim",
       "categoria": "amigos",
@@ -709,7 +722,7 @@
       "website": "conrad.com"
     },
     {
-      "id": 10,
+      "id": 11,
       "nome": "Clementina DuBuque",
       "cidade": "São Paulo",
       "categoria": "amigos",
@@ -724,7 +737,7 @@
       "cidade": "Belo Horizonte",
       "categoria": "Amigos",
       "website": "http://localhost:3000/crud.html",
-      "id": 11
+      "id": 12
     }
   ]
 }
