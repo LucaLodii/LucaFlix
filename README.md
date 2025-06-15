@@ -7,8 +7,8 @@ LucaFlix é um site inspirado no universo de O Senhor dos Anéis. Ele permite qu
 ## Como executar
 
 1. Clone o repositório:
-git clone https://github.com/seu-usuario/LorienFlix.git
-cd LorienFlix
+git clone https://github.com/seu-usuario/LucaFlix.git
+cd LucaFlix
 
 2. Instale as dependências:
 
@@ -66,38 +66,42 @@ Após o envio, o filme passa a aparecer na lista principal e pode ser favoritado
 ---
 
 ## Estrutura de diretórios (resumida)
+
+```plaintext
 LucaFlix/
 ├── db/
-│ └── db.json
+│   └── db.json
 ├── node_modules/
 ├── public/
-│ ├── assets/
-│ │ ├── css/
-│ │ │ ├── detalhes.css
-│ │ │ ├── favoritos.css
-│ │ │ ├── genero.css
-│ │ │ ├── movie-register.css
-│ │ │ ├── stylelogin.css
-│ │ │ ├── styles.css
-│ │ │ └── user-register.css
-│ │ └── img/
-│ ├── scripts/
-│ │ ├── app.js
-│ │ └── login.js
-│ ├── trailer/
-│ ├── detalhes.html
-│ ├── favoritos.html
-│ ├── genero.html
-│ ├── index.html
-│ ├── login.html
-│ ├── movie-register.html
-│ └── user-register.html
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── detalhes.css
+│   │   │   ├── favoritos.css
+│   │   │   ├── genero.css
+│   │   │   ├── movie-register.css
+│   │   │   ├── stylelogin.css
+│   │   │   ├── styles.css
+│   │   │   └── user-register.css
+│   │   ├── img/
+│   │   │   └── (imagens do projeto)
+│   │   ├── scripts/
+│   │   │   ├── app.js
+│   │   │   └── login.js
+│   │   └── trailer/
+│   │       └── (vídeos do projeto)
+│   ├── detalhes.html
+│   ├── favoritos.html
+│   ├── genero.html
+│   ├── index.html
+│   ├── login.html
+│   ├── movie-register.html
+│   └── user-register.html
 ├── .gitignore
 ├── index.js
 ├── package.json
 ├── package-lock.json
 └── README.md
-
+```
 
 ---
 
